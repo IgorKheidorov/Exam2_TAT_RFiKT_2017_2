@@ -83,7 +83,7 @@ public class IntegerConverter {
    * This function converts line into integer
    * @return  array list of a single number
    */
-  public ArrayList<Integer> covertLineIntoInteger() {
+  public ArrayList<Integer> convertLineIntoInteger() {
     ArrayList<Integer> resultOfConverting = new ArrayList<Integer>();
     String[] splitedString = {};
     int count = 0;
