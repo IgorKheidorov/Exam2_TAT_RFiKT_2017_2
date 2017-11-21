@@ -34,3 +34,8 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
+public class AssemblyInfo
+{
+  public const int UTF8_ZERO_CODE = 30;
+  public const int UTF8_NINE_CODE = 39;
+}
