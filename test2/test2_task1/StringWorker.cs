@@ -27,6 +27,33 @@
             return negative;
         }
 
+        private bool IsValidAfterSeparator(char[] splitString)
+        {
+            bool validation = true;
+            int count = 0;
+            for (int i = 0; i < splitString.Length; i++)
+            {
+                if (splitString[i] == '.' || splitString[i] == ',')
+                {
+                    count++;
+                }
+            }
+            int temp = splitString.Length - 1;
+            if(count > 0)
+            {
+                while (splitString[temp] != '.' || splitString[temp] != ',')
+                {
+                    if (splitString[temp] != '0')
+                    {
+                        return validation = false;
+                    }
+                    temp--;
+                }
+            }
+            return validation;
+        }
+
+
         private bool IsSymbolsValid(char[] splitString)
         {
             bool validation = true;
@@ -36,15 +63,13 @@
                 {
                     continue;
                 }
-                if (splitString[i] == '.' || splitString[i] == ',')
+                if(IsValidAfterSeparator(splitString))
                 {
-                    
+                    if (splitString[i] < '0' || splitString[i] > '9')
+                    {
+                        return validation = false;
+                    }
                 }
-                if (splitString[i] < '0' || splitString[i] > '9')
-                {
-                   return validation = false;
-                }
-                
             }
             return validation;
         }
