@@ -17,6 +17,16 @@ namespace TestTask1
         {
             Assert.AreEqual(-12, new IntegerParser("-12").Parse());
         }
+        [TestMethod]
+        public void TestComma()
+        {
+            Assert.AreEqual(12, new IntegerParser("12,").Parse());
+        }
+        [TestMethod]
+        public void TestZero()
+        {
+            Assert.AreEqual(0, new IntegerParser("0").Parse());
+        }
 
     }
 }
