@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Test2Task1
 {
+  /// <summary>
+  /// This class is used for convert string to int.
+  /// </summary>
  public class IntegerParser
   {
     string lineForParse;
@@ -79,6 +82,14 @@ namespace Test2Task1
       }
       return result;
     }
+   /// <summary>
+   /// this method is used for convert string to int if its possible.
+   /// in other case it returns exception with message, which incuding
+   /// the information about error.
+   /// </summary>
+   /// <returns>
+   /// Returns converted value.
+   /// </returns>
     public int ConvertToInt()
     {
       if (!CheckString())
