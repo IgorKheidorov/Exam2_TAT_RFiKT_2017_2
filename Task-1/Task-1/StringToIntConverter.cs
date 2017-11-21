@@ -5,7 +5,7 @@ namespace Task_1
   /// <summary>
   /// This class converts string to int if it can.
   /// </summary>
-  class StringToIntConverter
+  public class StringToIntConverter
   {
     private const char FirstIntNumber = '0';
     private const char LastIntNumber = '9';
