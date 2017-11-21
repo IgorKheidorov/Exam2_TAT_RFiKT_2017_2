@@ -45,7 +45,9 @@ namespace Task1
       else if (ContainsExpSymbol)
       {
         int indexOfExp = StringValue.IndexOfAny(new char[] { '^', 'e' });
-        intValue = ConvertStringPartToInt(0, indexOfExp);
+        int intValueBeforeExp = ConvertStringPartToInt(0, indexOfExp);
+        int intValueAfterExp = ConvertStringPartToInt(indexOfExp + 1, StringValue.Length);
+        intValue = (int)Math.Pow(intValueBeforeExp, intValueAfterExp);
       }
       else
       {
