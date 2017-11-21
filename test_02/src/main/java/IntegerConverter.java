@@ -117,8 +117,4 @@ public class IntegerConverter {
     }
     return resultOfConverting;
   }
-
-
-
-
 }
