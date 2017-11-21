@@ -5,7 +5,7 @@ namespace Exam
     /// <summary>
     /// Class for parsing inputed string.
     /// </summary>
-    class IntegerParser
+    public class IntegerParser
     {
         public const int ASCINORMALISATION = 48;
         public const char MINUS = '-';
