@@ -9,6 +9,6 @@ public class EntryPoint {
     System.out.println("Enter your line");
      String line = scanner.nextLine();
      IntegerConverter integerConverter = new IntegerConverter(line) ;
-     System.out.println("Converted line" + integerConverter.covertLineIntoInteger());
+     System.out.println("Converted line" + integerConverter.convertLineIntoInteger());
   }
 }
