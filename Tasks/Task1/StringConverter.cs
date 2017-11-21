@@ -12,6 +12,7 @@ namespace Task1
   {
     private const string CannotConvert = "Cannot convert";
     private const string Minus = "-";
+    private const string Plus = "+";
     private const int AsciiNullIndex = 48;
     private const int AsciiNineIndex = 57;
     private const int Ten = 10;
@@ -28,7 +29,12 @@ namespace Task1
       string convertedToIntString = input;
       bool isNegative = false;
 
-      if (IsStartWithMinus(input))
+      if (IsStartsWithPlus(input))
+      {
+        convertedToIntString = convertedToIntString.Remove(0, 1);
+      }
+
+      if (IsStartsWithMinus(input))
       {
         convertedToIntString = convertedToIntString.Remove(0, 1);
         isNegative = true;
@@ -69,9 +75,19 @@ namespace Task1
     /// </summary>
     /// <param name="input"></param>
     /// <returns></returns>
-    public bool IsStartWithMinus(string input)
+    public bool IsStartsWithMinus(string input)
     {
       return input.StartsWith(Minus);
+    }
+
+    /// <summary>
+    /// Check on possible positive number
+    /// </summary>
+    /// <param name="input"></param>
+    /// <returns></returns>
+    public bool IsStartsWithPlus(string input)
+    {
+      return input.StartsWith(Plus);
     }
 
     /// <summary>
@@ -92,7 +108,7 @@ namespace Task1
     /// <returns></returns>
     public bool IsIntSumThrowsOverflow(int value, int term)
     {
-      return int.MinValue + term > value || value > int.MaxValue - term;
+      return int.MinValue + term > value * (-1) || value > int.MaxValue - term;
     }
 
     /// <summary>
