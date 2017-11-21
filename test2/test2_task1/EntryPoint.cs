@@ -17,10 +17,20 @@ namespace test2_task1
                     Console.WriteLine(INPUTDATA);
                     string inputString = Console.ReadLine();
                     char[] splitString = inputString.ToCharArray();
+                    bool negative = false;
                     StringWorker stringWorker = new StringWorker();
                     if (stringWorker.IsValid(splitString))
                     {
                         int result = stringWorker.ConvertToInt(splitString);
+                        negative = stringWorker.IsNegative(splitString);
+                        if(negative)
+                        {
+                            Console.WriteLine("-" + result);
+                        }
+                        else
+                        {
+                            Console.WriteLine(result);
+                        }               
                     }
                     else
                     {

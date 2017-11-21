@@ -17,7 +17,7 @@
             return validation;
         }
 
-        private bool IsNegative(char[] splitString)
+        public bool IsNegative(char[] splitString)
         {
             bool negative = false;
             if (splitString[0] == '-')
