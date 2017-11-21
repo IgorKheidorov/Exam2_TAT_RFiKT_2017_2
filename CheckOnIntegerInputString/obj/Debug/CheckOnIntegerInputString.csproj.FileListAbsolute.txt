@@ -1,0 +1,7 @@
+D:\MyData\Programming\CSharp\test_2\Task_1\CheckOnIntegerInputString\CheckOnIntegerInputString\bin\Debug\CheckOnIntegerInputString.exe.config
+D:\MyData\Programming\CSharp\test_2\Task_1\CheckOnIntegerInputString\CheckOnIntegerInputString\bin\Debug\CheckOnIntegerInputString.exe
+D:\MyData\Programming\CSharp\test_2\Task_1\CheckOnIntegerInputString\CheckOnIntegerInputString\bin\Debug\CheckOnIntegerInputString.pdb
+D:\MyData\Programming\CSharp\test_2\Task_1\CheckOnIntegerInputString\CheckOnIntegerInputString\obj\Debug\CheckOnIntegerInputString.csprojResolveAssemblyReference.cache
+D:\MyData\Programming\CSharp\test_2\Task_1\CheckOnIntegerInputString\CheckOnIntegerInputString\obj\Debug\CheckOnIntegerInputString.csproj.CoreCompileInputs.cache
+D:\MyData\Programming\CSharp\test_2\Task_1\CheckOnIntegerInputString\CheckOnIntegerInputString\obj\Debug\CheckOnIntegerInputString.exe
+D:\MyData\Programming\CSharp\test_2\Task_1\CheckOnIntegerInputString\CheckOnIntegerInputString\obj\Debug\CheckOnIntegerInputString.pdb
