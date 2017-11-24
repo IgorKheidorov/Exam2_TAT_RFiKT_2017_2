@@ -48,9 +48,7 @@ namespace XMLToDomTask
         /// <returns></returns>
         public string FindFirstNode()
         {
-            string rootNode = Regex.Match(FileData, @"(\<)(.*?)(\>)").ToString();
-            rootNode = rootNode.Replace("<", String.Empty);
-            rootNode = rootNode.Replace(">", String.Empty);
+            string rootNode = FindNextNode();
             Node node = new Node();
             node.Tag = rootNode;
              /// Expression should find child of rootNodes. (but it doesn't)
@@ -60,16 +58,27 @@ namespace XMLToDomTask
            // node.ChildNodes = new List<Node>{};
         }
         /// <summary>
+        /// Find next node.
+        /// </summary>
+        /// <returns></returns>
+        public string FindNextNode()
+        {
+            string rootNode = Regex.Match(FileData, @"(\<)(.*?)(\>)").ToString();
+            rootNode = rootNode.Replace("<", String.Empty);
+            rootNode = rootNode.Replace(">", String.Empty);
+            return rootNode;
+        }
+        /// <summary>
         /// Split string by "<" and ">"
         /// </summary>
         public void ParseAllString()
         {
-            string firstValue = FindFirstNode();
+            string firstValue = FindNextNode();
             StringBuilder sb = new StringBuilder();
             string[] separ = new string[] { "<", ">" };
             string match = Regex.Match(FileData, @"(?<=<cars>)(.*)(?=<cars/>)")
                 .ToString();
-            string nextNode
+            string nextNode = Regex.Match(FileData, @"(\<)(.*?)(\>)").ToString();
             string[] splittedData = FileData.Split(separ, StringSplitOptions.RemoveEmptyEntries);
             foreach (string split in splittedData)
             {
@@ -80,11 +89,6 @@ namespace XMLToDomTask
                 if (splittedData[i] == firstValue)
                 {
                     continue;
-                }
-                if (splittedData[i].Equals()
-                {
-                    i++;
-                    InnerDataHandle(splittedData[i]);
                 }
             }
         }
