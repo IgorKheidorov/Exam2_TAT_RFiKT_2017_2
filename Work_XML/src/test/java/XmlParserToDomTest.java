@@ -19,10 +19,6 @@ public class XmlParserToDomTest {
     };
   }
 
-  @Test(dataProvider = "testInvalidData")
-  public void testIsInvalidData (String string) {
-    assertFalse(path.isPathValid(string));
-  }
   @Test(dataProvider = "testValidData")
   public void parseXmlWrongFormat(String string) {
   assertTrue(xmlParserToDom.isFileValid(string));
