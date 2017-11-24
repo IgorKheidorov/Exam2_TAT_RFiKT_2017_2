@@ -1,0 +1,10 @@
+<cars>
+<car>
+<model>bmw</model>
+<type>sedan</type>
+</car>
+<car>
+<model>volvo</model>
+<type>sedan</type>
+</car>
+</cars>
