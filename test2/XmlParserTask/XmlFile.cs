@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 using System.IO;
 using System.Text.RegularExpressions;
 
 namespace XmlParserTask
 {
+    /// <summary>
+    /// Class contains information about Xml file and methods 
+    /// which can read xml file and find nodes of file.
+    /// </summary>
     public class XmlFile
     {
         private string path = @"D:\tat_task\XmlFile.xml";
@@ -29,23 +29,26 @@ namespace XmlParserTask
         /// Add the root element of Xml file
         /// </summary>
         /// <params>Xml string<params>
-        public void AddRootElement(string xmlText)
+        public void FindRootNode(string xmlText)
         {
             string pattern = @"<\w*>";
             string rootElement = Regex.Match(xmlText, pattern).ToString();
-            rootElement = rootElement.Remove(rootElement.IndexOf('<'), 1);
-            rootElement = rootElement.Remove(rootElement.IndexOf('>'), 1);
-            Console.WriteLine(rootElement);
         }
 
         /// <summary>
-        /// Add node element
+        /// Find other nodes  of file between root node.
         /// </summary>
-        /// <params>Xml string<params>
-        public void FindNode(string xmlText)
+        /// <param name="xmlText">Xml string</param>
+        /// <param name="rootElement"></param>
+        public void FindNodes(string xmlText, string rootElement)
         {
-            //string textBetweenTags = @"<.>"
+
         }
+
+        /// <summary>
+        /// Method 
+        /// </summary>
+        public void TryParse()
 
     }
 }

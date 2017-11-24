@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace XmlParserTask
 {
@@ -21,7 +17,7 @@ namespace XmlParserTask
                 {
                     XmlFile xmlFile = new XmlFile();
                     string file = xmlFile.ReadFile();
-                    xmlFile.AddRootElement(file);
+                    xmlFile.FindRootNode(file);
                     Console.WriteLine(file);
                     programContinue = false;
                 }
