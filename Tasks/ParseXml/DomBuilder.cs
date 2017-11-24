@@ -5,7 +5,8 @@ using System.Text;
 namespace ParseXml
 {
   /// <summary>
-  /// 
+  /// Class converts file in field File
+  /// in DOM object with special methods
   /// </summary>
   public class DomBuilder
   {
@@ -13,7 +14,8 @@ namespace ParseXml
     private int CurrentLineIndex { get; set; }
 
     /// <summary>
-    /// 
+    /// Init
+    /// Read File from 0 (first) line
     /// </summary>
     /// <param name="inputFile"></param>
     public DomBuilder(string[] inputFile)
@@ -23,28 +25,31 @@ namespace ParseXml
     }
 
     /// <summary>
-    /// 
+    /// Bild dom object like list with dom elements
     /// </summary>
     /// <returns></returns>
     public List<Element> BuildDomFromXml()
     {
-      List<Element> domOject = new List<Element> {BindElem()};
+      List<Element> domOject = new List<Element> {BuildElem()};
       return domOject;
     }
 
     /// <summary>
-    /// 
+    /// Build dom Element
+    ///  with nested inside elements
     /// </summary>
-    /// <returns></returns>
-    private Element BindElem()
+    /// <returns>Dom Element with name, value and child elems</returns>
+    private Element BuildElem()
     {
       string currentLine = File[CurrentLineIndex];
       Element element = new Element();
 
       int closeTagIndex = currentLine.IndexOf('>');
-      element.Tag = BindTag(currentLine);
+      element.Tag = BindTagName(currentLine);
 
       string closingTag = element.Tag.Insert(1, "/");
+
+      // If element locates only in one line
       if (currentLine.EndsWith(closingTag))
       {
         element.Value = currentLine.Substring(closeTagIndex + 1,
@@ -54,9 +59,10 @@ namespace ParseXml
       }
       CurrentLineIndex++;
 
-      while (!BindTag(File[CurrentLineIndex]).Equals(closingTag))
+      // While did not put all the children in the parent element
+      while (!BindTagName(File[CurrentLineIndex]).Equals(closingTag))
       {
-        element.ChildElements.Add(BindElem());
+        element.ChildElements.Add(BuildElem());
       }
       CurrentLineIndex++;
 
@@ -68,7 +74,7 @@ namespace ParseXml
     /// </summary>
     /// <param name="line"></param>
     /// <returns></returns>
-    public string BindTag(string line)
+    public string BindTagName(string line)
     {
       int openTagIndex = line.IndexOf('<');
       int closeTagIndex = line.IndexOf('>');
