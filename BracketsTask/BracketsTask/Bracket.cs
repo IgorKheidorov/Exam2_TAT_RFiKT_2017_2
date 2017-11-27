@@ -23,6 +23,10 @@ namespace BracketsTask
         public bool IsValid(string inputString)
         {
             bool validation = true;
+            if (!IsContainBrackets(inputString))
+            {
+                return validation = false;
+            }
             char[] inputLine = inputString.ToCharArray();
             for(int i = 0; i < inputLine.Length; i++)
             {
@@ -81,5 +85,30 @@ namespace BracketsTask
             return validation;
         }
 
+        /// <summary>
+        /// Method checks string for the contents of brackets in it.
+        /// </summary>
+        /// <param name="inputLine">Input string.</param>
+        /// <returns>True if the string contains the brackets</returns>
+        private bool IsContainBrackets(string inputLine)
+        {
+            bool validation = true;
+            int countOfBrackets = 0;
+            for (int i = 0; i < inputLine.Length; i++)
+            {
+                for (int j = 0; j < charBrackets.Length; j++)
+                {
+                    if (inputLine[i] == charBrackets[j])
+                    {
+                        countOfBrackets++;
+                    }
+                }
+            }
+            if(countOfBrackets == 0)
+            {
+                return validation = false;
+            }
+            return validation;
+        }
     }
 }

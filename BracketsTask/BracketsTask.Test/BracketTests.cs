@@ -19,14 +19,31 @@ namespace BracketsTask.Test
         }
 
         [TestMethod]
-        public void IsValidWithNotValidPositionBracketsString()
+        public void IsValidWithNotValidPositionBracketsNegative()
         {
             Assert.IsFalse(new Brackets().IsValid("([{])}"));
         }
         [TestMethod]
-        public void IsValidWithStringWithoutBrackets()
+        public void IsValidWithStringWithoutBracketsNegative()
         {
             Assert.IsFalse(new Brackets().IsValid("111"));
+        }
+
+        [TestMethod]
+        public void IsValidWithStringWithCloseBracketMoreThanOPenBracketsNegative()
+        {
+            Assert.IsFalse(new Brackets().IsValid("()))"));
+        }
+
+        [TestMethod]
+        public void IsValidWithNotDataAfterTheBracketsPositive()
+        {
+            Assert.IsFalse(new Brackets().IsValid("()1111"));
+        }
+        [TestMethod]
+        public void IsValidWithNotDataInTheCenterOfTheBracketsPositive()
+        {
+            Assert.IsFalse(new Brackets().IsValid("()1111"));
         }
     }
 }
