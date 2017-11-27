@@ -53,5 +53,13 @@ namespace UnitTestTask2
 
             Assert.AreEqual(true, checker.CheckByBrakets());
         }
+
+        [TestMethod]
+        public void TestCheckValidLineWithSymbols()
+        {
+            CheckerCorrectLine checker = new CheckerCorrectLine("{()45+[aaa]}");
+
+            Assert.AreEqual(true, checker.CheckByBrakets());
+        }
     }
 }
