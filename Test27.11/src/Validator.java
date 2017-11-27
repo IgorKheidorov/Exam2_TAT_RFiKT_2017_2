@@ -25,13 +25,13 @@ public class Validator {
       if (bracket == closingBrackets.toCharArray()[0]
               || bracket == closingBrackets.toCharArray()[1]
               || bracket == closingBrackets.toCharArray()[2] && bracketStack.size() != 0) {
-        deleteBracket(bracketStack.peek(), bracket);
+        deleteBracket(bracketStack.peek().toString().charAt(0), bracket);
       }
     }
     return (bracketStack.empty());
   }
 
-  private void deleteBracket(Object openingBracket, char closingBracket) {
+  private void deleteBracket(char openingBracket, char closingBracket) {
     for (int i = 0; i < openingBrackets.length(); i++) {
       if (openingBracket == openingBrackets.toCharArray()[i]
               && closingBracket == closingBrackets.toCharArray()[i]) {
