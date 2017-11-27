@@ -13,7 +13,7 @@ public class StackOfBrackets {
   public StackOfBrackets(int size) {
     this.algebraicExpressionSize = size;
     stackArray = new int[algebraicExpressionSize];
-    top = -1;
+    top = - 1;
   }
 
   /**
@@ -45,7 +45,7 @@ public class StackOfBrackets {
    * @return true if stack is empty, false otherwise
    */
   public boolean isEmpty() {
-    return (top == -1);
+    return (top == - 1);
   }
 
   /**
