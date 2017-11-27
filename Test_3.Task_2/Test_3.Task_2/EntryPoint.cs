@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Test_3.Task_2
 {
@@ -10,7 +6,16 @@ namespace Test_3.Task_2
   {
     static void Main(string[] args)
     {
-      new BracketsValidator().CheckBracketsAlignment("}");
+      try
+      {
+        BracketsValidator validator = new BracketsValidator();
+        validator.CheckBracketsAlignment("}");
+      }
+      catch(Exception e)
+      {
+        Console.WriteLine(e.Message);
+      }
+      
     }
   }
 }

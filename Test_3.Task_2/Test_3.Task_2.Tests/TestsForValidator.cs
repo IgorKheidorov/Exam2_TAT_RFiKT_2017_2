@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Test_3.Task_2.Tests
 {
@@ -7,7 +6,7 @@ namespace Test_3.Task_2.Tests
   public class TestsForValidator
   {
     [TestMethod]
-    public void Positive()
+    public void TestPositiveCombinationsOfBrackets()
     {
       Assert.AreEqual(true, new BracketsValidator().CheckBracketsAlignment("()"));
       Assert.AreEqual(true, new BracketsValidator().CheckBracketsAlignment("[]"));
@@ -17,7 +16,7 @@ namespace Test_3.Task_2.Tests
     }
 
     [TestMethod]
-    public void Negative()
+    public void TestNegativeCombinationsOfBrackets()
     {
       Assert.AreEqual(false, new BracketsValidator().CheckBracketsAlignment("(]"));
       Assert.AreEqual(false, new BracketsValidator().CheckBracketsAlignment("(()"));
