@@ -19,14 +19,16 @@ namespace Task
     {
       List<char> bracketsInExpression = GetListWithBracketsInExpression(expression, bracketsDictionary);
 
-      if (bracketsInExpression.Count % 2 != 0)
-      {
-        return false;
-      }
-
+      // Check if there are no brackets
       if (bracketsInExpression.Count == 0)
       {
         return true;
+      }
+
+      // Check if not all brackets are closed
+      if (bracketsInExpression.Count % 2 != 0)
+      {
+        return false;
       }
 
       if (!IsPossibleFillStack(bracketsInExpression, bracketsDictionary)) return false;
@@ -54,7 +56,7 @@ namespace Task
         // Try pop open bracket
         if (bracketsDictionary.ContainsKey(elem))
         {
-          if (bracketsStack.Count !=0 && bracketsStack.Peek().Equals(bracketsDictionary[elem]))
+          if (bracketsStack.Count != 0 && bracketsStack.Peek().Equals(bracketsDictionary[elem]))
           {
             bracketsStack.Pop();
           }
