@@ -16,5 +16,11 @@ namespace AlgebraicExpression.Tests
     {
       Assert.AreEqual(true, new Expression(" ").GetBrackets());
     }
+
+    [TestMethod]
+    public void CheckBrackets_wrongExpression_falseValue()
+    {
+      Assert.AreEqual(false, new Expression("([)]").GetBrackets());
+    }
   }
 }
