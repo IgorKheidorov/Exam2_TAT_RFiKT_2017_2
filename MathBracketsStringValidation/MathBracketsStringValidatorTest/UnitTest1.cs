@@ -14,9 +14,9 @@ namespace MathBracketsStringValidationTest
         }
 
         [TestMethod]
-        public void TestCheckEmptyString()
+        public void TestCheckSingleBracket()
         {
-            Assert.AreEqual(true, new CheckerForBrackets().Check(""));
+            Assert.AreEqual(true, new CheckerForBrackets().Check("["));
         }
 
         [TestMethod]

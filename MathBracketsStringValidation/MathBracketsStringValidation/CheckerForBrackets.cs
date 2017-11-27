@@ -25,7 +25,6 @@ namespace MathBracketsStringValidation
             listOfBrackets.Add(']');
             listOfBrackets.Add('(');
             listOfBrackets.Add(')');
-            listOfBrackets.ForEach(Console.WriteLine);
         }
 
         /// <summary>
@@ -40,14 +39,11 @@ namespace MathBracketsStringValidation
 
             for (int i = 0; i < source.Length; i++)
             {
-                Console.WriteLine(source[i]);
                 if (listOfBrackets.Contains(source[i]))
                 {
                     bracketsInSource.Add(source[i]);
                 }
             }
-
-            bracketsInSource.ForEach(Console.WriteLine);
 
             bool isWasDeleted = true;
             while (isWasDeleted)
@@ -55,7 +51,8 @@ namespace MathBracketsStringValidation
                 isWasDeleted = false;
                 for (int i = 0; i < bracketsInSource.Count - 1; i++)
                 {
-                    if (bracketsInSource[i + 1] == listOfBrackets[listOfBrackets.IndexOf(bracketsInSource[i]) + 1])
+                    // if open bracket and next symbol is same close bracet
+                    if (bracketsInSource[i] % 2 == 0 && bracketsInSource[i + 1] == listOfBrackets[listOfBrackets.IndexOf(bracketsInSource[i]) + 1])
                     {
                         bracketsInSource.RemoveAt(i);
                         bracketsInSource.RemoveAt(i);
