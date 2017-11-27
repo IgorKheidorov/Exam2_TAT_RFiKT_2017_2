@@ -127,5 +127,10 @@ namespace MondayTaskTest
         {
             Assert.AreEqual(false, new BracketValidator().IsValidArrangment("}{}{{]{]{]{]{}{}{}"));
         }
+        [TestMethod]
+        public void NegativeTestForWrongArrangmentOfTwoBrackets()
+        {
+            Assert.AreEqual(false, new BracketValidator().IsValidArrangment("}{"));
+        }
     }
 }
