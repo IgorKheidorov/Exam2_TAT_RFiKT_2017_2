@@ -1,0 +1,6 @@
+c:\users\imarket.by\documents\visual studio 2017\Projects\checkParentheses\checkParentheses\bin\Debug\checkParentheses.exe.config
+c:\users\imarket.by\documents\visual studio 2017\Projects\checkParentheses\checkParentheses\bin\Debug\checkParentheses.exe
+c:\users\imarket.by\documents\visual studio 2017\Projects\checkParentheses\checkParentheses\bin\Debug\checkParentheses.pdb
+c:\users\imarket.by\documents\visual studio 2017\Projects\checkParentheses\checkParentheses\obj\Debug\checkParentheses.csprojResolveAssemblyReference.cache
+c:\users\imarket.by\documents\visual studio 2017\Projects\checkParentheses\checkParentheses\obj\Debug\checkParentheses.exe
+c:\users\imarket.by\documents\visual studio 2017\Projects\checkParentheses\checkParentheses\obj\Debug\checkParentheses.pdb
