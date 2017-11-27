@@ -107,5 +107,25 @@ namespace MondayTaskTest
         {
             Assert.AreEqual(true, new BracketValidator().IsValidArrangment("(){}[]23"));
         }
+        [TestMethod]
+        public void PositiveTestForValidArranmentWithSpaces()
+        {
+            Assert.AreEqual(true, new BracketValidator().IsValidArrangment("(   () ) []"));
+        }
+        [TestMethod]
+        public void NegativeTestForArrangmentWithFirstCloseBracket()
+        {
+            Assert.AreEqual(false, new BracketValidator().IsValidArrangment("}((("));
+        }
+        [TestMethod]
+        public void NegativeTestForArrangmentWithNumbers()
+        {
+            Assert.AreEqual(false, new BracketValidator().IsValidArrangment("45{}["));
+        }
+        [TestMethod]
+        public void NegativeTestForArrangmentRandomAmountOfBrackets()
+        {
+            Assert.AreEqual(false, new BracketValidator().IsValidArrangment("}{}{{]{]{]{]{}{}{}"));
+        }
     }
 }
