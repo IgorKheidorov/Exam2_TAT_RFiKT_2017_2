@@ -38,12 +38,19 @@ namespace BracketsTask.Test
         [TestMethod]
         public void IsValidWithNotDataAfterTheBracketsPositive()
         {
-            Assert.IsFalse(new Brackets().IsValid("()1111"));
+            Assert.IsTrue(new Brackets().IsValid("()1111"));
         }
+
         [TestMethod]
         public void IsValidWithNotDataInTheCenterOfTheBracketsPositive()
         {
-            Assert.IsFalse(new Brackets().IsValid("()1111"));
+            Assert.IsTrue(new Brackets().IsValid("()1111"));
+        }
+
+        [TestMethod]
+        public void IsValidWithConsecutiveIntroductionOfBracketsPositive()
+        {
+            Assert.IsTrue(new Brackets().IsValid("(){}[]"));
         }
     }
 }
