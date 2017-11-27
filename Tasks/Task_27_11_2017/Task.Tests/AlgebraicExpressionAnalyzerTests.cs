@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using NUnit.Framework;
 
 namespace Task.Tests
@@ -16,16 +17,26 @@ namespace Task.Tests
     private static string[] sourceInValidExpressions =
     {
       "{", "[", "(", "}", ")","]",
+      "{1", "[1", "(1", "1}", "1)","1]","}1", ")1","]1",
       "{)","{]","(}","(]","[}","[)",
-      ")(","}{","][",
+      "1{)","1{]","1(}","1(]","1[}","1[)",
+      "{1)","{1]","(1}","(1]","[1}","[1)",
+      "{)1","{]1","(}1","(]1","[}1","[)1",
+      "{([", "{[(", "({[", "([{", "[{(","[{(",
       "{[[(])]}",
+      ")(","}{","][",
+      ")()(",")[](","){}(",
+      "}(){","}[]{","}{}{",
+      "]()[","][][","]{}[",
 
     };
-    
+
+
     [Test, TestCaseSource("sourceInValidExpressions")]
     public void IsBracketAlignmentValidInInvalidExpressionFalse(string expression)
     {
       Assert.False(new AlgebraicExpressionAnalyzer().IsBracketAlignmentValid(expression, BracketsDictionary));
     }
+
   }
 }

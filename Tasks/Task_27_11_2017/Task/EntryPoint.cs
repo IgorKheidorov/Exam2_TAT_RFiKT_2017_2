@@ -3,7 +3,7 @@
 namespace Task
 {
   /// <summary>
-  /// 
+  /// Class contains dictionary with possible brackets
   /// </summary>
   public class EntryPoint
   {

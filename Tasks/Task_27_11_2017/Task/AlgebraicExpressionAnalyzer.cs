@@ -14,7 +14,7 @@ namespace Task
     /// </summary>
     /// <param name="expression">inputed expression</param>
     /// <param name="bracketsDictionary">possible brackets</param>
-    /// <returns></returns>
+    /// <returns>true if brackets aligment valid, false otherwise</returns>
     public bool IsBracketAlignmentValid(string expression, Dictionary<char, char> bracketsDictionary)
     {
       List<char> bracketsInExpression = GetListWithBracketsInExpression(expression, bracketsDictionary);
@@ -22,6 +22,11 @@ namespace Task
       if (bracketsInExpression.Count % 2 != 0)
       {
         return false;
+      }
+
+      if (bracketsInExpression.Count == 0)
+      {
+        return true;
       }
 
       if (!IsPossibleFillStack(bracketsInExpression, bracketsDictionary)) return false;
@@ -34,7 +39,7 @@ namespace Task
     /// </summary>
     /// <param name="bracketsInExpression">list brackets in inputed expression</param>
     /// <param name="bracketsDictionary">possible brackets</param>
-    /// <returns></returns>
+    /// <returns>true if , false otherwise</returns>
     private bool IsPossibleFillStack(List<char> bracketsInExpression, Dictionary<char, char> bracketsDictionary)
     {
       Stack<char> bracketsStack = new Stack<char>();
@@ -49,7 +54,7 @@ namespace Task
         // Try pop open bracket
         if (bracketsDictionary.ContainsKey(elem))
         {
-          if (bracketsStack.Peek().Equals(bracketsDictionary[elem]))
+          if (bracketsStack.Count !=0 && bracketsStack.Peek().Equals(bracketsDictionary[elem]))
           {
             bracketsStack.Pop();
           }
@@ -64,7 +69,7 @@ namespace Task
     /// </summary>
     /// <param name="expression">input expression</param>
     /// <param name="bracketsDictionary">possible brackets</param>
-    /// <returns></returns>
+    /// <returns>List with brackets in inputed expression</returns>
     private List<char> GetListWithBracketsInExpression(string expression, Dictionary<char, char> bracketsDictionary)
     {
       List<char> bracketsInExpression = new List<char>();
