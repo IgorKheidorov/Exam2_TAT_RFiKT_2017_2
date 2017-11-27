@@ -52,7 +52,7 @@ namespace MathBracketsStringValidation
                 for (int i = 0; i < bracketsInSource.Count - 1; i++)
                 {
                     // if open bracket and next symbol is same close bracet
-                    if (bracketsInSource[i] % 2 == 0 && bracketsInSource[i + 1] == listOfBrackets[listOfBrackets.IndexOf(bracketsInSource[i]) + 1])
+                    if (/*bracketsInSource[i] % 2 == 0 &&*/ bracketsInSource[i + 1] == listOfBrackets[listOfBrackets.IndexOf(bracketsInSource[i]) + 1])
                     {
                         bracketsInSource.RemoveAt(i);
                         bracketsInSource.RemoveAt(i);
