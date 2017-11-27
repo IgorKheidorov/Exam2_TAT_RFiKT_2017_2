@@ -41,12 +41,12 @@ namespace BracketsPositionValidation
     {
       if (bracketsStack.Count == 0)
       {
-        return false;
+        return true;
       }
       while (bracketsStack.Count > 0)
       {
         FullfillStackOfClosingBrackets();
-        if (closingBracketsStack.Count == 0)
+        if (closingBracketsStack.Count == 0 || bracketsStack.Count == 0)
         {
           return false;
         }
@@ -69,13 +69,13 @@ namespace BracketsPositionValidation
 
     private bool IsInRightOrder()
     {
-      while (!bracketsStack.Peek().Equals(bracketsSymbols[1]) && !bracketsStack.Peek().Equals(bracketsSymbols[3])
-             && !bracketsStack.Peek().Equals(bracketsSymbols[5]))
+      if (bracketsStack.Count < closingBracketsStack.Count)
       {
-        if (bracketsStack.Count < closingBracketsStack.Count)
-        {
-          return false;
-        }
+        return false;
+      }
+      while (bracketsStack.Count > 0 && (!bracketsStack.Peek().Equals(bracketsSymbols[1])
+             && !bracketsStack.Peek().Equals(bracketsSymbols[3]) && !bracketsStack.Peek().Equals(bracketsSymbols[5])))
+      {
         if (bracketsStack.Peek().Equals(bracketsSymbols[0]) && closingBracketsStack.Peek().Equals(bracketsSymbols[1]))
         {
           bracketsStack.Pop();

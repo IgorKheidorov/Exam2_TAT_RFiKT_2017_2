@@ -10,7 +10,7 @@ namespace BracketsPositionValidatorTest
     [TestMethod]
     public void TestArePositionsOfBreackrtsValidPositive()
     {
-      string[] validInput = { "()", "[()]", "{[()][()]}", "{test}" };
+      string[] validInput = { "()", "[()]", "{[()][()]}", "()[]{}", "{test}", "abc", "(\\[])", String.Empty};
       foreach (string line in validInput)
       {
         Assert.IsTrue(new BracketsPositionValidator(line).ArePositionsOfBreackrtsValid());
@@ -20,7 +20,7 @@ namespace BracketsPositionValidatorTest
     [TestMethod]
     public void TestArePositionsOfBreackrtsValidNegative()
     {
-      string[] invalidInput = { "(", "[(])", "{[][)}", String.Empty};
+      string[] invalidInput = { "(", "[]}", "[(])", "{[][)}"};
       foreach (string line in invalidInput)
       {
         Assert.IsFalse(new BracketsPositionValidator(line).ArePositionsOfBreackrtsValid());
