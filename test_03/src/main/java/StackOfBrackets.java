@@ -1,5 +1,5 @@
 /**
- * This class is make a stack.
+ * This class is make a stack and commands.
  */
 public class StackOfBrackets {
   private int algebraicExpressionSize;
