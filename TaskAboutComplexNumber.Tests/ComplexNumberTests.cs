@@ -98,5 +98,21 @@ namespace TaskAboutComplexNumber.Tests
             double excpectedResult = Math.Sqrt(Math.Pow(2, 2) + Math.Pow(4, 2));          
             Assert.AreEqual(excpectedResult, firstComplexNumber.Abs());
         }
+
+        [TestMethod]
+        public void TestAbsOnZero()
+        {
+            ComplexNumber firstComplexNumber = new ComplexNumber(0, 0);
+            double excpectedResult = Math.Sqrt(Math.Pow(0, 2) + Math.Pow(0, 2));
+            Assert.AreEqual(excpectedResult, firstComplexNumber.Abs());
+        }
+
+        [TestMethod]
+        public void TestAbsOnNegative()
+        {
+            ComplexNumber firstComplexNumber = new ComplexNumber(-2, -4);
+            double excpectedResult = Math.Sqrt(Math.Pow(-2, 2) + Math.Pow(-4, 2));
+            Assert.AreEqual(excpectedResult, firstComplexNumber.Abs());
+        }
     }
 }
