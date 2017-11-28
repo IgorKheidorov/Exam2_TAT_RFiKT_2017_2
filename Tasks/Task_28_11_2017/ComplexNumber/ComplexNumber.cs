@@ -82,6 +82,7 @@ namespace ComplexNumber
 
     /// <summary>
     /// Overrided operator quotient between two complex numbers
+    /// Throws exception when secondNumber has null absolute value
     /// </summary>
     /// <param name="firstNumber"></param>
     /// <param name="secondNumber"></param>
