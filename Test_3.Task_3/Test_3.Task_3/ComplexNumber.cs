@@ -1,4 +1,5 @@
-﻿namespace Test_3.Task_3
+﻿using System;
+namespace Test_3.Task_3
 
 {
   /// <summary>
@@ -68,6 +69,22 @@
       result.realPart = firstNumber.realPart * secondNumber.realPart - firstNumber.imaginaryPart * secondNumber.imaginaryPart;
       result.imaginaryPart = firstNumber.imaginaryPart * secondNumber.realPart + firstNumber.realPart * secondNumber.ImaginaryPart;
       return result;
+    }
+
+    private double ModComplexNumber(ComplexNumber complexNumber)
+    {
+      return Math.Sqrt(Math.Pow(complexNumber.realPart, 2) + Math.Pow(complexNumber.imaginaryPart, 2));
+    }
+
+    /// <summary>
+    /// Tgis method compares two complex numbers.
+    /// </summary>
+    /// <param name="firstNumber">First number.</param>
+    /// <param name="secondNumber">Second number.</param>
+    /// <returns>Returns true if numbers are equal, and false if not.</returns>
+    public bool Equals(ComplexNumber firstNumber, ComplexNumber secondNumber)
+    {
+      return ModComplexNumber(firstNumber).Equals(ModComplexNumber(secondNumber));
     }
   }
 }
