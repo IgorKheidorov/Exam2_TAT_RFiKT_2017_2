@@ -44,6 +44,12 @@ namespace ComplexNumberTests
         }
 
         [TestMethod]
+        public void SumOfComplexNumberegative()
+        {
+            Assert.(new ComplexNumber(double.MaxValue, double.MaxValue) + new ComplexNumber(int.MaxValue, int.MaxValue)).ToString());
+        }
+
+        [TestMethod]
         public void SumOfComplexNumberWithCorrectDoubleDataPositive()
         {
             Assert.AreEqual(new ComplexNumber(4.2, 6.2).ToString(), (new ComplexNumber(3.1, 4.1) + new ComplexNumber(1.1, 2.1)).ToString());
@@ -53,6 +59,36 @@ namespace ComplexNumberTests
         public void DifferenceOfComplexNumberWithCorrectDoubleDataPositive()
         {
             Assert.AreEqual(new ComplexNumber(2, 2).ToString(), (new ComplexNumber(3.1, 4.1) - new ComplexNumber(1.1, 2.1)).ToString());
+        }
+
+        [TestMethod]
+        public void DifferenceOfComplexNumberWithCorrectDataPositive()
+        {
+            Assert.AreEqual(new ComplexNumber(2, 2).ToString(), (new ComplexNumber(3, 4) - new ComplexNumber(1, 2)).ToString());
+        }
+
+        [TestMethod]
+        public void MultiplicateOfComplexNumberWithCorrectDataPositive()
+        {
+            Assert.AreEqual(new ComplexNumber(-1, 8).ToString(), (new ComplexNumber(3, 2) * new ComplexNumber(1, 2)).ToString());
+        }
+
+        [TestMethod]
+        public void MultiplicateOfComplexNumberWithCorrectDoubleDataPositive()
+        {
+            Assert.AreEqual(new ComplexNumber(-1, 9.68).ToString(), (new ComplexNumber(3.2, 2.2) * new ComplexNumber(1.2, 2.2)).ToString());
+        }
+
+        [TestMethod]
+        public void DivisionOfComplexNumberWithCorrectDataPositive()
+        {
+            Assert.AreEqual(new ComplexNumber(1.4, -0.8).ToString(), (new ComplexNumber(3, 2) / new ComplexNumber(1, 2)).ToString());
+        }
+
+        [TestMethod]
+        public void DivisionOfComplexNumberWithNullDataPositive()
+        {
+            Assert.AreEqual(new ComplexNumber(-1, 9.68).ToString(), (new ComplexNumber(3.2, 2.2) / new ComplexNumber(1.2, 2.2)).ToString());
         }
 
     }
