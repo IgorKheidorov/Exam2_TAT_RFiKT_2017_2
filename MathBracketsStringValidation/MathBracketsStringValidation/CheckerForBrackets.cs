@@ -34,6 +34,16 @@ namespace MathBracketsStringValidation
         /// <returns> Returns true, if string is valid. </returns>
         public bool Check(string source)
         {
+            if (source.Length == 0 || (source.Length == 1 && !listOfBrackets.Contains(source[0])))
+            {
+                return true;
+            }
+
+            if (source.Length == 1 && listOfBrackets.Contains(source[0]))
+            {
+                return false;
+            }
+
             bool result = true;
             List<char> bracketsInSource = new List<char>();
 
@@ -45,15 +55,21 @@ namespace MathBracketsStringValidation
                 }
             }
 
+            Console.WriteLine("bracketsInSource");
+            bracketsInSource.ForEach(Console.WriteLine);
+
             bool isWasDeleted = true;
             while (isWasDeleted)
             {
                 isWasDeleted = false;
                 for (int i = 0; i < bracketsInSource.Count - 1; i++)
                 {
-                    // if open bracket and next symbol is same close bracet
-                    if (/*bracketsInSource[i] % 2 == 0 &&*/ bracketsInSource[i + 1] == listOfBrackets[listOfBrackets.IndexOf(bracketsInSource[i]) + 1])
+                    //Console.WriteLine("bracketsInSource[i+1]={0}!?={1}!", bracketsInSource[i + 1], listOfBrackets[listOfBrackets.IndexOf(bracketsInSource[i]) + 1]);
+                    if (listOfBrackets.IndexOf(bracketsInSource[i]) % 2 == 0 &&
+                        listOfBrackets.IndexOf(bracketsInSource[i + 1]) % 2 == 1 &&
+                        bracketsInSource[i + 1] == listOfBrackets[listOfBrackets.IndexOf(bracketsInSource[i]) + 1])
                     {
+                        Console.WriteLine("bracketsInSource[i+1]={0}!?={1}!Equals", bracketsInSource[i + 1], listOfBrackets[listOfBrackets.IndexOf(bracketsInSource[i]) + 1]);
                         bracketsInSource.RemoveAt(i);
                         bracketsInSource.RemoveAt(i);
                         i--;

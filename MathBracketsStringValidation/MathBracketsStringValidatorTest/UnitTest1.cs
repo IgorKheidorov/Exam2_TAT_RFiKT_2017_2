@@ -14,12 +14,6 @@ namespace MathBracketsStringValidationTest
         }
 
         [TestMethod]
-        public void TestCheckSingleBracket()
-        {
-            Assert.AreEqual(true, new CheckerForBrackets().Check("["));
-        }
-
-        [TestMethod]
         public void TestCheckSinglePairOfBrackets()
         {
             Assert.AreEqual(true, new CheckerForBrackets().Check("{}"));
@@ -47,6 +41,12 @@ namespace MathBracketsStringValidationTest
         public void TestCheckComplexBracketsExpression()
         {
             Assert.AreEqual(true, new CheckerForBrackets().Check("{[()()][{}]}"));
+        }
+
+        [TestMethod]
+        public void TestCheckIncorrectSingleBracket()
+        {
+            Assert.AreEqual(false, new CheckerForBrackets().Check("["));
         }
 
         [TestMethod]

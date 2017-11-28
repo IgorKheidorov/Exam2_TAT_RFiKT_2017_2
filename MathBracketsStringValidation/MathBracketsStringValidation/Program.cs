@@ -11,7 +11,7 @@ namespace MathBracketsStringValidation
         static void Main(string[] args)
         {
             CheckerForBrackets checkerForBrackets = new CheckerForBrackets();
-            Console.WriteLine("Is string can be maths expression? \nAnswer: {0}.", checkerForBrackets.Check(args[0]));
+            Console.WriteLine("Is string '{1}' can be maths expression? \nAnswer: {0}.", checkerForBrackets.Check(args[0]), args[0]);
         }
     }
 }
