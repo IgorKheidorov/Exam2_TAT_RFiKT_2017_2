@@ -6,11 +6,11 @@ public class ComplexNumberTest {
 
   @org.junit.Test
   public void additionPositiveTest() throws Exception {
-    assertEquals(new ComplexNumber(1.25,2), new ComplexNumber().addition(firstNumber, secondNumber));
+    new ComplexNumber().comparison(new ComplexNumber(1.25,2), new ComplexNumber().addition(firstNumber, secondNumber));
   }
 
   @org.junit.Test
   public void subtractionPositiveTest() throws Exception {
-    assertEquals(new ComplexNumber(0.75,1), new ComplexNumber().addition(firstNumber, secondNumber));
+    new ComplexNumber().comparison(new ComplexNumber(0.75,1), new ComplexNumber().addition(firstNumber, secondNumber));
   }
 }

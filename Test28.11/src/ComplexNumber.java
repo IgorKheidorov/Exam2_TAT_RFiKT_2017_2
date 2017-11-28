@@ -96,4 +96,12 @@ public class ComplexNumber {
     // to do - realization of division
     return new ComplexNumber();
   }
+
+  private double moduleComplexNumber(ComplexNumber complexNumber) {
+    return Math.sqrt(Math.pow(complexNumber.realPart, 2) + Math.pow(complexNumber.imaginaryPart, 2));
+  }
+
+  public int comparison(ComplexNumber firstNumber, ComplexNumber secondNumber) {
+    return (Double.compare(moduleComplexNumber(firstNumber), moduleComplexNumber(secondNumber)));
+  }
 }
