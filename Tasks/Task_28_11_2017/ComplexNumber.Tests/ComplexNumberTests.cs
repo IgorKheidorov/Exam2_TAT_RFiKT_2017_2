@@ -164,6 +164,15 @@ namespace ComplexNumber.Tests
                     new ComplexNumber(0, 0)},
     };
 
+    private static object[] sourceInvalidDiffTwoComplexNumbers =
+    {
+      new object[] {new ComplexNumber(Double.MaxValue, Double.MaxValue),
+        new ComplexNumber(Double.MinValue, Double.MinValue),
+        new ComplexNumber(Double.PositiveInfinity, Double.PositiveInfinity)},
+      new object[] {new ComplexNumber(Double.MinValue, Double.MinValue),
+        new ComplexNumber(Double.MaxValue, Double.MaxValue),
+        new ComplexNumber(Double.NegativeInfinity, Double.NegativeInfinity)},
+    };
 
     [Test]
     public void CreateComplexNumberWithDefaultConstructor()
@@ -209,6 +218,12 @@ namespace ComplexNumber.Tests
 
     [Test, TestCaseSource("sourceValidDiffTwoComplexNumbers")]
     public void DiffValidComplexNumbers(ComplexNumber firstNumber, ComplexNumber secondNumber, ComplexNumber sum)
+    {
+      Assert.AreEqual(firstNumber - secondNumber, sum);
+    }
+
+    [Test, TestCaseSource("sourceInvalidDiffTwoComplexNumbers")]
+    public void DiffInvalidComplexNumbers(ComplexNumber firstNumber, ComplexNumber secondNumber, ComplexNumber sum)
     {
       Assert.AreEqual(firstNumber - secondNumber, sum);
     }
