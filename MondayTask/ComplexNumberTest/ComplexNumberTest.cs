@@ -52,6 +52,14 @@ namespace ComplexNumberTest
             Assert.AreEqual(1, new ComplexNumber(2, 3)/ (new ComplexNumber(0, 0)));
         }
 
+        [ExpectedException(typeof(OverflowException))]
+        [TestMethod]
+        public void NegativeTestForSubstracts()
+        {
+            Assert.AreNotEqual(new ComplexNumber(1.1, 0).ToString(),
+                (new ComplexNumber(2.1, Double.MaxValue)
+                - (new ComplexNumber(1.1, Double.MaxValue))).ToString());
+        }
 
     }
 }
