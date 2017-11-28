@@ -101,6 +101,13 @@ public class ComplexNumber {
     return Math.sqrt(Math.pow(complexNumber.realPart, 2) + Math.pow(complexNumber.imaginaryPart, 2));
   }
 
+  /**
+   * Compares two complex numbers.
+   *
+   * @param firstNumber  the first complex number
+   * @param secondNumber the second complex number
+   * @return comparison result
+   */
   public int comparison(ComplexNumber firstNumber, ComplexNumber secondNumber) {
     return (Double.compare(moduleComplexNumber(firstNumber), moduleComplexNumber(secondNumber)));
   }
