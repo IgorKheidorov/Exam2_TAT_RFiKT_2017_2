@@ -46,7 +46,7 @@ namespace ComplexNumberTests
         [TestMethod]
         public void SumOfComplexNumberegative()
         {
-            Assert.(new ComplexNumber(double.MaxValue, double.MaxValue) + new ComplexNumber(int.MaxValue, int.MaxValue)).ToString());
+            Assert.ThrowsException(new ComplexNumber(double.MaxValue, double.MaxValue) + new ComplexNumber(int.MaxValue, int.MaxValue));
         }
 
         [TestMethod]
