@@ -1,14 +1,16 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using ComplexNumber;
 
 namespace ComplexNumberTest
 {
     [TestClass]
-    public class UnitTest1
+    public class ComplexNumberTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void TestConstractor()
         {
+
         }
     }
 }
