@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace ComplexNumber
 {
@@ -176,6 +177,15 @@ namespace ComplexNumber
 
       // Return true if the fields match:
       return this.RealPart.Equals(complexNumber.RealPart) && this.ImaginaryPart.Equals(complexNumber.ImaginaryPart);
+    }
+
+    /// <summary>
+    /// String from complex number
+    /// </summary>
+    /// <returns>Complex number like string</returns>
+    public override string ToString()
+    {
+      return new StringBuilder(RealPart.ToString()).AppendLine(ImaginaryPart.ToString()).ToString();
     }
   }
 }
