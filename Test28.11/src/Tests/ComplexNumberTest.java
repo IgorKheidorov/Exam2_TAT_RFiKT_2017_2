@@ -11,6 +11,11 @@ public class ComplexNumberTest {
 
   @org.junit.Test
   public void subtractionPositiveTest() throws Exception {
-    new ComplexNumber().comparison(new ComplexNumber(0.75,1), new ComplexNumber().addition(firstNumber, secondNumber));
+    new ComplexNumber().comparison(new ComplexNumber(0.75,1), new ComplexNumber().subtraction(firstNumber, secondNumber));
+  }
+
+  @org.junit.Test
+  public void multiplicationPositiveTest() throws Exception {
+    new ComplexNumber().comparison(new ComplexNumber(0.75,1), new ComplexNumber().multiplication(firstNumber, secondNumber));
   }
 }
