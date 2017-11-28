@@ -101,7 +101,7 @@ namespace ComplexNumberNs
     {
       ComplexNumber resultNumber = new ComplexNumber();
       resultNumber.Re = firstNumber.Re * secondeNumber.Re - firstNumber.Im * secondeNumber.Im;
-      resultNumber.Re = firstNumber.Re * secondeNumber.Im + firstNumber.Im * secondeNumber.Re;
+      resultNumber.Im = firstNumber.Re * secondeNumber.Im + firstNumber.Im * secondeNumber.Re;
       return resultNumber;
     }
 
@@ -116,7 +116,7 @@ namespace ComplexNumberNs
       ComplexNumber resultNumber = new ComplexNumber();
       resultNumber.Re = (firstNumber.Re * secondeNumber.Re + firstNumber.Im * secondeNumber.Im) /
                         (Math.Pow(secondeNumber.Re, 2) + Math.Pow(secondeNumber.Im, 2));
-      resultNumber.Re = (secondeNumber.Re * firstNumber.Im - firstNumber.Re * secondeNumber.Im) /
+      resultNumber.Im = (secondeNumber.Re * firstNumber.Im - firstNumber.Re * secondeNumber.Im) /
                         (Math.Pow(secondeNumber.Re, 2) + Math.Pow(secondeNumber.Im, 2)); ;
       return resultNumber;
     }

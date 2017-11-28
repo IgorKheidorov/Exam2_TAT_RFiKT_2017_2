@@ -51,6 +51,7 @@
     <Compile Include="CompareToTest.cs" />
     <Compile Include="CopyConstructorTest.cs" />
     <Compile Include="OperatorMinusTest.cs" />
+    <Compile Include="OperatorMultiplyTest.cs" />
     <Compile Include="OperatorPlusTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="OperatorDevisionTest.cs" />
