@@ -193,10 +193,8 @@ namespace Task3
         public ComplexNumber Multiply(ComplexNumber first, ComplexNumber second)
         {
             ComplexNumber result = new ComplexNumber();
-            if (Math.Abs(first.Re * second.Re).CompareTo(double.MaxValue) >= 0
-               || Math.Abs(first.Im * second.Im).CompareTo(double.MaxValue) >= 0
-               || Math.Abs(first.Im * second.Re).CompareTo(double.MaxValue) >= 0
-               || Math.Abs(first.Re * second.Im).CompareTo(double.MaxValue) >= 0)
+            if (Math.Abs(first.Re * second.Re - first.Im * second.Im).CompareTo(double.MaxValue) >= 0
+               || Math.Abs(first.Im * second.Re + first.Re * second.Im).CompareTo(double.MaxValue) >= 0)
             {
                 throw new ArgumentOutOfRangeException();
             }
