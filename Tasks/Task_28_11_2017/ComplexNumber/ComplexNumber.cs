@@ -129,12 +129,57 @@ namespace ComplexNumber
     }
 
     /// <summary>
+    /// Comparator for two complex numbers
+    /// </summary>
+    /// <param name="complexNumber"></param>
+    /// <returns>-1 - absolute value of this instance precedes absolute value of complexNumber.
+    /// 0 - absolute value of this instance in the same position as absolute value of complexNumber.
+    /// 1 - absolute value of this instance follows absolute value of complexNumber.</returns>
+    public int CompareTo(ComplexNumber complexNumber)
+    {
+      if (this.GetAbsoluteValue() > complexNumber.GetAbsoluteValue())
+      {
+        return 1;
+      }
+
+      if (this.GetAbsoluteValue() < complexNumber.GetAbsoluteValue())
+      {
+        return -1;
+      }
+
+      return 0;
+    }
+    /// <summary>
     /// Get absolute value of complex number
     /// </summary>
     /// <returns>Value of module</returns>
     public double GetAbsoluteValue()
     {
       return Math.Pow((Math.Pow(RealPart, 2) + Math.Pow(ImaginaryPart, 2)), 0.5);
+    }
+
+    /// <summary>
+    /// Override method Equals
+    /// Check on equal all fields
+    /// </summary>
+    /// <param name="obj"></param>
+    /// <returns></returns>
+    public override bool Equals(object obj)
+    {
+      // If parameter cannot be cast to ComplexNumber return false.
+      ComplexNumber complexNumber = obj as ComplexNumber;
+      if ((object)complexNumber == null)
+      {
+        return false;
+      }
+
+      // Return true if the fields match:
+      if (Math.Abs(this.RealPart - complexNumber.RealPart) < Double.Epsilon
+          && Math.Abs(this.ImaginaryPart - complexNumber.ImaginaryPart) < Double.Epsilon)
+      {
+        return true;
+      }
+      return false;
     }
   }
 }
