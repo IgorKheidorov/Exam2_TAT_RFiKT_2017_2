@@ -163,10 +163,9 @@ namespace Task3
         public ComplexNumber Divide(ComplexNumber first, ComplexNumber second)
         {
             ComplexNumber result = new ComplexNumber();
-            if (Math.Abs(first.Re * second.Re).CompareTo(double.MaxValue) >= 0 
-                || Math.Abs(first.Im * second.Im).CompareTo(double.MaxValue) >= 0
-                || Math.Abs(first.Im * second.Re).CompareTo(double.MaxValue) >= 0
-                || Math.Abs(first.Re * second.Im).CompareTo(double.MaxValue) >= 0
+            if (Math.Abs(first.Re * second.Re + first.Im * second.Im).CompareTo(double.MaxValue) >= 0
+                || Math.Abs(first.Im * second.Re - first.Re * second.Im).CompareTo(double.MaxValue) >= 0
+                || Math.Abs(second.Re * second.Re + second.Im * second.Im).CompareTo(double.MaxValue) >= 0
                 || Math.Abs(second.Re * second.Re + second.Im * second.Im).CompareTo(0) == 0)
             {
                 throw new ArgumentOutOfRangeException();
