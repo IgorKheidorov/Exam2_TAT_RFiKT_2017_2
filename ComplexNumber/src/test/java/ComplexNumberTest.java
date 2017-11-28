@@ -105,14 +105,31 @@ public class ComplexNumberTest {
 
   @org.junit.Test
   public void multiply() throws Exception {
+    Random random = new Random();
+    double real1 = random.nextDouble();
+    double imaginary1 = random.nextDouble();
+    double real2 = random.nextDouble();
+    double imaginary2 = random.nextDouble();
+    ComplexNumber complexNumber = new ComplexNumber(real1, imaginary1).multiply(new ComplexNumber(real2, imaginary2));
+    double tempReal = (real1 * real2) - (imaginary1 * imaginary2);
+    double tempImaginary = real1 * imaginary2 + imaginary1 * real2;
+    assertEquals(tempReal, complexNumber.getReal(), 0.0001);
+    assertEquals(tempImaginary, complexNumber.getImaginary(), 0.0001);
   }
 
   @org.junit.Test
-  public void compareTo() throws Exception {
+  public void compareToPositive() throws Exception {
+    Random random = new Random();
+    ComplexNumber complexNumber1 = new ComplexNumber(random.nextDouble(), random.nextDouble());
+    ComplexNumber complexNumber2 = new ComplexNumber(complexNumber1);
+    assertEquals(0, complexNumber1.compareTo(complexNumber2));
   }
 
   @org.junit.Test
-  public void print() throws Exception {
+  public void compareToNegative() throws Exception {
+    Random random = new Random();
+    ComplexNumber complexNumber1 = new ComplexNumber(random.nextDouble(), random.nextDouble());
+    ComplexNumber complexNumber2 = new ComplexNumber(random.nextDouble(), random.nextDouble());
+    assertEquals(1, complexNumber1.compareTo(complexNumber2));
   }
-
 }
