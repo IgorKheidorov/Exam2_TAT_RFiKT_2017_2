@@ -175,12 +175,7 @@ namespace ComplexNumber
       }
 
       // Return true if the fields match:
-      if (Math.Abs(this.RealPart - complexNumber.RealPart) < Double.Epsilon
-          && Math.Abs(this.ImaginaryPart - complexNumber.ImaginaryPart) < Double.Epsilon)
-      {
-        return true;
-      }
-      return false;
+      return this.RealPart.Equals(complexNumber.RealPart) && this.ImaginaryPart.Equals(complexNumber.ImaginaryPart);
     }
   }
 }

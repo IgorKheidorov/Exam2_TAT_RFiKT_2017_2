@@ -17,23 +17,30 @@ namespace ComplexNumber.Tests
       new object[] {-1, 0, new ComplexNumber(-1,0)},
       new object[] {-1, 1, new ComplexNumber(-1, 1)},
       new object[] {1,-1, new ComplexNumber(1,-1)},
-      new object[] {int.MaxValue, int.MaxValue, new ComplexNumber(int.MaxValue, int.MaxValue)},
-      new object[] {int.MinValue, int.MinValue, new ComplexNumber(int.MinValue, int.MinValue)},
-      new object[] {int.MaxValue, int.MinValue, new ComplexNumber(int.MaxValue, int.MinValue)},
-      new object[] {int.MinValue, int.MaxValue, new ComplexNumber(int.MinValue, int.MaxValue)},
-      new object[] {0, int.MinValue, new ComplexNumber(0, int.MinValue)},
-      new object[] {0, int.MaxValue, new ComplexNumber(0, int.MaxValue)},
-      new object[] {int.MaxValue, 0, new ComplexNumber(int.MaxValue, 0)},
-      new object[] {int.MinValue, 0, new ComplexNumber(int.MinValue, 0)},
 
-      new object[] {Double.MaxValue, Double.MaxValue, new ComplexNumber(Double.MaxValue, Double.MaxValue)},
-      new object[] {Double.MinValue, Double.MinValue, new ComplexNumber(Double.MinValue, Double.MinValue)},
-      new object[] {Double.MaxValue, Double.MinValue, new ComplexNumber(Double.MaxValue, Double.MinValue)},
-      new object[] {Double.MinValue, Double.MaxValue, new ComplexNumber(Double.MinValue, Double.MaxValue)},
       new object[] {0, Double.MinValue, new ComplexNumber(0, Double.MinValue)},
       new object[] {0, Double.MaxValue, new ComplexNumber(0, Double.MaxValue)},
       new object[] {Double.MaxValue, 0, new ComplexNumber(Double.MaxValue, 0)},
       new object[] {Double.MinValue, 0, new ComplexNumber(Double.MinValue, 0)},
+      new object[] {Double.MaxValue, Double.MaxValue, new ComplexNumber(Double.MaxValue, Double.MaxValue)},
+      new object[] {Double.MinValue, Double.MinValue, new ComplexNumber(Double.MinValue, Double.MinValue)},
+      new object[] {Double.MaxValue, Double.MinValue, new ComplexNumber(Double.MaxValue, Double.MinValue)},
+      new object[] {Double.MinValue, Double.MaxValue, new ComplexNumber(Double.MinValue, Double.MaxValue)},
+    };
+
+    private static object[] sourceConstructorWithInvalidParams =
+    {
+      new object[] {0, Double.MinValue - 1, new ComplexNumber(0, Double.NegativeInfinity)},
+      new object[] {0, Double.MaxValue + 1, new ComplexNumber(0, Double.PositiveInfinity)},
+      new object[] {Double.MaxValue + 1, 0, new ComplexNumber(Double.PositiveInfinity, 0)},
+      new object[] {Double.MinValue - 1, 0, new ComplexNumber(Double.NegativeInfinity, 0)},
+      new object[] {Double.MaxValue + 1, Double.MaxValue, new ComplexNumber(Double.PositiveInfinity, Double.MaxValue)},
+      new object[] {Double.MaxValue, Double.MaxValue + 1, new ComplexNumber(Double.MaxValue, Double.PositiveInfinity)},
+      new object[] {Double.MinValue - 1, Double.MinValue, new ComplexNumber(Double.NegativeInfinity, Double.MinValue)},
+      new object[] {Double.MinValue, Double.MinValue - 1, new ComplexNumber(Double.MinValue, Double.NegativeInfinity)},
+      new object[] {Double.MinValue - 1, Double.MaxValue + 1, new ComplexNumber(Double.NegativeInfinity, Double.PositiveInfinity)},
+      new object[] {Double.MinValue - 1, Double.MinValue - 1, new ComplexNumber(Double.NegativeInfinity, Double.NegativeInfinity)},
+      new object[] {Double.MaxValue + 1, Double.MaxValue + 1, new ComplexNumber(Double.PositiveInfinity, Double.PositiveInfinity)},
     };
 
     private static object[] sourceCopyConstructorWithValidParam =
@@ -147,6 +154,12 @@ namespace ComplexNumber.Tests
       Assert.AreEqual(new ComplexNumber(realPart, imaginaryPart), complexNumber);
     }
 
+    [Test, TestCaseSource("sourceConstructorWithInvalidParams")]
+    public void CreateComplexNumberFromInvalidParams(double realPart, double imaginaryPart, ComplexNumber complexNumber)
+    {
+      Assert.AreEqual(new ComplexNumber(realPart, imaginaryPart), complexNumber);
+    }
+
     [Test, TestCaseSource("sourceCopyConstructorWithValidParam")]
     public void CreateComplexNumberFromValidComplexNumber(ComplexNumber complexNumber)
     {
@@ -164,5 +177,7 @@ namespace ComplexNumber.Tests
     {
       Assert.AreEqual(firstNumber + secondNumber, sum);
     }
+
+
   }
 }
