@@ -26,5 +26,10 @@ namespace Tests
     {
       Assert.AreEqual("15+6i", (new ComplexNumber(27, 19) - new ComplexNumber(12, 13)).ToString());
     }
+    [TestMethod]
+    public void TestGettingAbsolute()
+    {
+      Assert.AreEqual(5, (new ComplexNumber(3, 4).GetAbsolute()));
+    }
   }
 }
