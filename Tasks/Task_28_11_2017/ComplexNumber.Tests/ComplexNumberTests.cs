@@ -142,6 +142,29 @@ namespace ComplexNumber.Tests
                     new ComplexNumber(Double.NegativeInfinity,Double.PositiveInfinity)},
     };
 
+    private static object[] sourceValidDiffTwoComplexNumbers =
+    {
+      new object[] {new ComplexNumber(0,0),new ComplexNumber(0,0),new ComplexNumber(0,0)},
+      new object[] {new ComplexNumber(1,1),new ComplexNumber(1,1),new ComplexNumber(0,0)},
+      new object[] {new ComplexNumber(0,1),new ComplexNumber(0,1),new ComplexNumber(0,0)},
+      new object[] {new ComplexNumber(1,0),new ComplexNumber(1,0),new ComplexNumber(0,0)},
+      new object[] {new ComplexNumber(-1,-1),new ComplexNumber(-1,-1),new ComplexNumber(0,0)},
+      new object[] {new ComplexNumber(0,-1),new ComplexNumber(0,-1),new ComplexNumber(0,0)},
+      new object[] {new ComplexNumber(-1,0),new ComplexNumber(-1,0),new ComplexNumber(0,0)},
+      new object[] {new ComplexNumber(-1, 1),new ComplexNumber(-1, 1),new ComplexNumber(0, 0)},
+      new object[] {new ComplexNumber(1,-1),new ComplexNumber(1,-1),new ComplexNumber(0,0)},
+      new object[] {new ComplexNumber(-1, 1),new ComplexNumber(1, -1),new ComplexNumber(-2, 2)},
+      new object[] {new ComplexNumber(1,-1),new ComplexNumber(-1,1),new ComplexNumber(2,-2)},
+
+      new object[] {new ComplexNumber(Double.MaxValue, Double.MaxValue),
+                    new ComplexNumber(Double.MaxValue, Double.MaxValue),
+                    new ComplexNumber(0, 0)},
+      new object[] {new ComplexNumber(Double.MinValue, Double.MinValue),
+                    new ComplexNumber(Double.MinValue, Double.MinValue),
+                    new ComplexNumber(0, 0)},
+    };
+
+
     [Test]
     public void CreateComplexNumberWithDefaultConstructor()
     {
@@ -154,6 +177,9 @@ namespace ComplexNumber.Tests
       Assert.AreEqual(new ComplexNumber(realPart, imaginaryPart), complexNumber);
     }
 
+    /// <summary>
+    /// All numbers must lead to infinity, but some tests do not fix this
+    /// </summary>
     [Test, TestCaseSource("sourceConstructorWithInvalidParams")]
     public void CreateComplexNumberFromInvalidParams(double realPart, double imaginaryPart, ComplexNumber complexNumber)
     {
@@ -172,12 +198,19 @@ namespace ComplexNumber.Tests
       Assert.AreEqual(firstNumber + secondNumber, sum);
     }
 
+    /// <summary>
+    /// All sums of numbers must lead to infinity, but some tests do not fix this
+    /// </summary>
     [Test, TestCaseSource("sourceInvalidSumTwoComplexNumbers")]
     public void SumInvalidComplexNumbers(ComplexNumber firstNumber, ComplexNumber secondNumber, ComplexNumber sum)
     {
       Assert.AreEqual(firstNumber + secondNumber, sum);
     }
 
-
+    [Test, TestCaseSource("sourceValidDiffTwoComplexNumbers")]
+    public void DiffValidComplexNumbers(ComplexNumber firstNumber, ComplexNumber secondNumber, ComplexNumber sum)
+    {
+      Assert.AreEqual(firstNumber - secondNumber, sum);
+    }
   }
 }
