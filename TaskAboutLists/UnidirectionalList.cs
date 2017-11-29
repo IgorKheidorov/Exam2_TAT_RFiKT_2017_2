@@ -43,15 +43,8 @@ namespace TaskAboutLists
         private Element<Type> tail;
         public int count { get; set; }
 
-        /// <summary>
-        /// Default constructor.
-        /// </summary>
-        public UnidirectionalList()
-        {
-            head = null;
-            head.next = null;
-            count = 0;
-        }
+      
+      
 
         /// <summary>
         /// Adds element to list.
@@ -67,9 +60,10 @@ namespace TaskAboutLists
             }
             else
             {
-                tail.next = newElement;            
+                tail.next = newElement;
+                tail = newElement;
             }
-            tail = newElement;
+            
             count++;
         }
 
