@@ -9,7 +9,6 @@
     public Node<T> Head { get; private set; }
     public Node<T> Tail { get; private set; }
     public int Count { get; private set; }
-    private Node<T> Current { get; set; }
 
     /// <summary>
     /// This is default constructor for LinkedList.
@@ -33,25 +32,24 @@
     }
 
     /// <summary>
-    /// This method initialize current element by head.
+    /// This methode gets value by index.
     /// </summary>
-    public void InitCurrentByHead()
+    /// <param name="index"> index of element </param>
+    /// <returns> value from list by index</returns>
+    public T GetValue(int index)
     {
-      Current = Head;
-    }
-
-    /// <summary>
-    /// This method gets next element. If it is last element, method will return current.
-    /// </summary>
-    /// <returns> next element </returns>
-    public Node<T> GetNext()
-    {
-      if (Current.Next == null)
+      Node<T> current = Head;
+      int counter = 0;
+      while (current != null)
       {
-        return Current;
+        if (counter == index)
+        {
+          return current.Value;
+        }
+        current = current.Next;
+        counter++;
       }
-      Current = Current.Next;
-      return Current;
+      return current.Value;
     }
 
     /// <summary>
@@ -81,7 +79,6 @@
     {
       Head = null;
       Tail = null;
-      Current = null;
       Count = 0;
     }
 

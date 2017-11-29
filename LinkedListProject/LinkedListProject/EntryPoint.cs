@@ -18,8 +18,10 @@ namespace LinkedListProject
         linkedList.Add(1);
         linkedList.Add(5);
         linkedList.Add(3);
-        linkedList.InitCurrentByHead();
-
+        for (int i = 0; i < linkedList.Count; i++)
+        {
+          Console.WriteLine(linkedList.GetValue(i));
+        }
       }
       catch(Exception ex)
       {
