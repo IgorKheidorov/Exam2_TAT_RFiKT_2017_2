@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace Project
 {
@@ -6,7 +8,7 @@ namespace Project
   /// Custom class describes linked list
   /// </summary>
   /// <typeparam name="T"></typeparam>
-  public class CustomList<T>
+  public class CustomList<T> : IEnumerable<T>, IEnumerator<T>
   {
     //public Node<T> First { private get; set; }
     //public Node<T> Last { private get; set; }
@@ -117,7 +119,7 @@ namespace Project
     /// <param name="index">position</param>
     public void RemoveAt(int index)
     {
-      if (index >= Count || index < 0 )
+      if (index >= Count || index < 0)
         throw new ArgumentOutOfRangeException();
 
       var current = GetElement(index);
@@ -183,12 +185,19 @@ namespace Project
     /// Get value of next elem in list
     /// </summary>
     /// <returns></returns>
-    public T GetNext()
+    public T GetCurrentValue()
     {
-      T value = currentNode.Next.Value;
-      currentNode = currentNode.Next;
+      T value = currentNode.Value;
+      if (currentNode.Next == null)
+      {
+        currentNode = head;
+      }
+      else
+      {
+        currentNode = currentNode.Next;
+      }
       return value;
-    } 
+    }
 
     /// <summary>
     /// Get element in list by index
@@ -228,6 +237,38 @@ namespace Project
         if (head == null)
           tail = null;
       }
+    }
+
+    public IEnumerator<T> GetEnumerator()
+    {
+      throw new NotImplementedException();
+    }
+
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+      return GetEnumerator();
+    }
+
+    public bool MoveNext()
+    {
+      throw new NotImplementedException();
+    }
+
+    public void Reset()
+    {
+      throw new NotImplementedException();
+    }
+
+    public T Current { get; }
+
+    object IEnumerator.Current
+    {
+      get { return Current; }
+    }
+
+    public void Dispose()
+    {
+      throw new NotImplementedException();
     }
   }
 }
