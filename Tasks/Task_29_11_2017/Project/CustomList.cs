@@ -239,33 +239,64 @@ namespace Project
       }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns></returns>
     public IEnumerator<T> GetEnumerator()
     {
       throw new NotImplementedException();
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns></returns>
     IEnumerator IEnumerable.GetEnumerator()
     {
       return GetEnumerator();
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns></returns>
     public bool MoveNext()
     {
-      throw new NotImplementedException();
+      if (currentNode.Next == null)
+      {
+        Reset();
+        return false;
+      }
+
+      currentNode = currentNode.Next;
+      return true;
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public void Reset()
     {
-      throw new NotImplementedException();
+      currentNode = head;
     }
 
-    public T Current { get; }
+    /// <summary>
+    /// 
+    /// </summary>
+    public T Current { get { return currentNode.Value; } }
 
+    /// <summary>
+    /// 
+    /// </summary>
     object IEnumerator.Current
     {
       get { return Current; }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public void Dispose()
     {
       throw new NotImplementedException();
