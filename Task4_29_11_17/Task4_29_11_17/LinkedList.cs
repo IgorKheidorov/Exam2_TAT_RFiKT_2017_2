@@ -1,4 +1,5 @@
-﻿namespace Task4_29_11_17
+﻿using System;
+namespace Task4_29_11_17
 {
     /// <summary>
     /// Realised linked list
@@ -146,6 +147,31 @@
             }
 
             return removed;
+        }
+
+        /// <summary>
+        /// Display element value
+        /// </summary>
+        /// <param name="element">
+        /// sourse element
+        /// </param>
+        public void Display(NodeToLinkedList<T> element)
+        {
+            Console.WriteLine(element.Value);
+        }
+
+        /// <summary>
+        /// Get next node
+        /// </summary>
+        /// <param name="element">
+        /// sourse node
+        /// </param>
+        /// <returns>
+        /// next node
+        /// </returns>
+        public NodeToLinkedList<T> GetNext(NodeToLinkedList<T> element)
+        {
+            return element.Next;
         }
     }
 }
