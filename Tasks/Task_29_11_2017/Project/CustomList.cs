@@ -12,14 +12,13 @@ namespace Project
     //public Node<T> Last { private get; set; }
     private Node<T> head;
     private Node<T> tail;
-    private int count;
-    private static Node<T> current;
+    private static Node<T> currentNode;
 
-    public int Count { get; }
+    public int Count { get; private set; }
 
     public CustomList()
     {
-      current = head;
+      currentNode = head;
     }
     /// <summary>
     /// Add item in list
@@ -39,21 +38,21 @@ namespace Project
       }
       tail = node;
 
-      count++;
+      Count++;
     }
 
     /// <summary>
     /// Add item in the first position of the list
     /// </summary>
     /// <param name="item">Data</param>
-    public void Appendfirst(T item)
+    public void AppendFirst(T item)
     {
       Node<T> node = new Node<T>(item);
       node.Next = head;
       head = node;
-      if (count == 0)
+      if (Count == 0)
         tail = head;
-      count++;
+      Count++;
     }
 
     /// <summary>
@@ -64,12 +63,12 @@ namespace Project
     /// <param name="item">Data</param>
     public void Insert(int index, T item)
     {
-      if (index >= count || index < 0)
+      if (index >= Count || index < 0)
         throw new ArgumentOutOfRangeException();
 
       if (index == 0)
-        Appendfirst(item);
-      else if (index == count - 1)
+        AppendFirst(item);
+      else if (index == Count - 1)
       {
         Add(item);
       }
@@ -82,7 +81,7 @@ namespace Project
         node.Next = current;
         previous.Next = node;
 
-        count++;
+        Count++;
       }
     }
 
@@ -101,7 +100,7 @@ namespace Project
         if (current.Value.Equals(item))
         {
           ChangeNodes(previous, current);
-          count--;
+          Count--;
           return true;
         }
 
@@ -118,7 +117,7 @@ namespace Project
     /// <param name="index">position</param>
     public void RemoveAt(int index)
     {
-      if (index >= count || index < 0 )
+      if (index >= Count || index < 0 )
         throw new ArgumentOutOfRangeException();
 
       var current = GetElement(index);
@@ -131,7 +130,7 @@ namespace Project
     /// <returns>True if empty, false otherwise</returns>
     public bool IsEmpty()
     {
-      return count == 0;
+      return Count == 0;
     }
 
     /// <summary>
@@ -141,7 +140,7 @@ namespace Project
     {
       head = null;
       tail = null;
-      count = 0;
+      Count = 0;
     }
 
     /// <summary>
@@ -186,8 +185,8 @@ namespace Project
     /// <returns></returns>
     public T GetNext()
     {
-      T value = current.Next.Value;
-      current = current.Next;
+      T value = currentNode.Next.Value;
+      currentNode = currentNode.Next;
       return value;
     } 
 

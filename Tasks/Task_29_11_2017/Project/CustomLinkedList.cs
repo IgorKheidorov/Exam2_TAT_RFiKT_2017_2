@@ -3,61 +3,62 @@
 namespace Project
 {
   /// <summary>
-  /// 
+  /// Custom class describes doubly-linked lists
   /// </summary>
   /// <typeparam name="T"></typeparam>
   public class CustomLinkedList<T>
   {
-    public DoublyNode<T> First { get; set; }
-    public DoublyNode<T> Last { get; set; }
+    private DoublyNode<T> head;
+    private DoublyNode<T> tail;
+    private DoublyNode<T> currentNode;
 
-    private int count;
-    public int Count { get; }
+    public int Count { get; private set; }
 
     /// <summary>
-    /// 
+    /// Add item in list
     /// </summary>
-    /// <param name="data"></param>
-    public void Add(T data)
+    /// <param name="item"></param>
+    public void Add(T item)
     {
-      DoublyNode<T> node = new DoublyNode<T>(data);
+      DoublyNode<T> node = new DoublyNode<T>(item);
 
-      if (First == null)
-        First = node;
+      if (head == null)
+        head = node;
       else
       {
-        Last.Next = node;
-        node.Previous = Last;
+        tail.Next = node;
+        node.Previous = tail;
       }
-      Last = node;
-      count++;
+      tail = node;
+      Count++;
     }
 
     /// <summary>
-    /// 
+    /// Add item in the first position of the list
     /// </summary>
-    /// <param name="data"></param>
-    public void AppendFirst(T data)
+    /// <param name="item"></param>
+    public void AppendFirst(T item)
     {
-      DoublyNode<T> node = new DoublyNode<T>(data);
-      DoublyNode<T> temp = First;
+      DoublyNode<T> node = new DoublyNode<T>(item);
+      DoublyNode<T> temp = head;
       node.Next = temp;
-      First = node;
-      if (count == 0)
-        Last = First;
+      head = node;
+      if (Count == 0)
+        tail = head;
       else
         temp.Previous = node;
-      count++;
+      Count++;
     }
 
     /// <summary>
-    /// 
+    /// Insert item in the some position of the list
+    /// Throws exception if index is invalid
     /// </summary>
-    /// <param name="index"></param>
-    /// <param name="item"></param>
+    /// <param name="index">Position</param>
+    /// <param name="item">Data</param>
     public void Insert(int index, T item)
     {
-      if (index >= count)
+      if (index >= Count)
         throw new ArgumentOutOfRangeException();
 
       if (index == 0)
@@ -73,17 +74,17 @@ namespace Project
     }
 
     /// <summary>
-    /// 
+    /// Remove item in list
     /// </summary>
-    /// <param name="data"></param>
-    /// <returns></returns>
-    public bool Remove(T data)
+    /// <param name="item">Data</param>
+    /// <returns>True if succesfull removing, false otherwise</returns>
+    public bool Remove(T item)
     {
-      DoublyNode<T> current = First;
+      DoublyNode<T> current = head;
 
       while (current != null)
       {
-        if (current.Value.Equals(data))
+        if (current.Value.Equals(item))
         {
           break;
         }
@@ -92,51 +93,52 @@ namespace Project
       if (current != null)
       {
         ChangePreviousNextInDoublyNodes(current);
-        count--;
+        Count--;
         return true;
       }
       return false;
     }
 
     /// <summary>
-    /// 
+    /// Remove item from some position in list
+    /// Throws exception if index is invalid
     /// </summary>
-    /// <param name="index"></param>
+    /// <param name="index">position</param>
     public void RemoveAt(int index)
     {
-      if (index >= count)
+      if (index >= Count)
         throw new ArgumentOutOfRangeException();
       DoublyNode<T> current = GetElement(index);
       Remove(current.Value);
     }
 
     /// <summary>
-    /// 
+    /// Check if the list is empty
     /// </summary>
-    /// <returns></returns>
+    /// <returns>True if empty, false otherwise</returns>
     public bool IsEmpty()
     {
-      return count == 0;
+      return Count == 0;
     }
 
     /// <summary>
-    /// 
+    /// Clear list
     /// </summary>
     public void Clear()
     {
-      First = null;
-      Last = null;
-      count = 0;
+      head = null;
+      tail = null;
+      Count = 0;
     }
 
     /// <summary>
-    /// 
+    /// Check if list contains some data
     /// </summary>
-    /// <param name="data"></param>
-    /// <returns></returns>
+    /// <param name="data">checked data</param>
+    /// <returns>True if contains, else otherwise</returns>
     public bool Contains(T data)
     {
-      DoublyNode<T> current = First;
+      DoublyNode<T> current = head;
       while (current != null)
       {
         if (current.Value.Equals(data))
@@ -147,13 +149,13 @@ namespace Project
     }
 
     /// <summary>
-    /// 
+    /// Get index of item in list
     /// </summary>
-    /// <param name="item"></param>
-    /// <returns></returns>
+    /// <param name="item">item</param>
+    /// <returns>Index if list contains item, -1 otherwise</returns>
     public int IndexOf(T item)
     {
-      DoublyNode<T> current = First;
+      DoublyNode<T> current = head;
       int index = 0;
       while (current != null)
       {
@@ -166,13 +168,13 @@ namespace Project
     }
 
     /// <summary>
-    /// 
+    /// Get element in list by index
     /// </summary>
     /// <param name="index"></param>
-    /// <returns></returns>
+    /// <returns>Node element</returns>
     private DoublyNode<T> GetElement(int index)
     {
-      DoublyNode<T> current = First;
+      DoublyNode<T> current = head;
       int currentIndex = 0;
 
       while (currentIndex != index)
@@ -184,9 +186,9 @@ namespace Project
     }
 
     /// <summary>
-    /// 
+    /// Help method to method Remove
     /// </summary>
-    /// <param name="current"></param>
+    /// <param name="current">DoublyNode</param>
     private void ChangePreviousNextInDoublyNodes(DoublyNode<T> current)
     {
       if (current.Next != null)
@@ -195,7 +197,7 @@ namespace Project
       }
       else
       {
-        Last = current.Previous;
+        tail = current.Previous;
       }
 
       if (current.Previous != null)
@@ -204,7 +206,7 @@ namespace Project
       }
       else
       {
-        First = current.Next;
+        head = current.Next;
       }
     }
   }

@@ -22,5 +22,25 @@ namespace Project.Tests
       }
       Assert.That(list.Count == count);
     }
+
+    [Test, TestCaseSource("sourceAddingTestCount")]
+    public void AddItemInListCheckLastElem(CustomList<int> list, int[] items, int lastValue)
+    {
+      foreach (var item in items)
+      {
+        list.Add(item);
+      }
+      Assert.That(list.IndexOf(lastValue) == list.Count - 1);
+    }
+
+    [Test, TestCaseSource("sourceAddingTestCount")]
+    public void AddItemInFirstPositionListCheckFirstElem(CustomList<int> list, int[] items, int lastValue)
+    {
+      foreach (var item in items)
+      {
+        list.AppendFirst(item);
+      }
+      Assert.That(list.IndexOf(lastValue) == 0);
+    }
   }
 }
