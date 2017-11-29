@@ -34,6 +34,8 @@ namespace ListsTask
         /// <returns>True if element removes, else - false.</returns>
         public bool Remove(T element)
         {
+            bool removing = false;
+            int countBeforeRemoving = count;
             DoubleNode<T> current = head;
             while (current != null)
             {
@@ -56,11 +58,14 @@ namespace ListsTask
                         head = current.Next;
                     }
                     count--;
-                    return true;
                 }
                 current = current.Next;
             }
-            return false;
+            if (count < countBeforeRemoving)
+            {
+                return removing = true;
+            }
+            return removing;
         }
 
         /// <summary>
