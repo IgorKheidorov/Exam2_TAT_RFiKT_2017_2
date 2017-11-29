@@ -11,7 +11,7 @@ namespace List
     DoublyConnectedListNode<T> firstNode;
     DoublyConnectedListNode<T> lastNode;
     DoublyConnectedListNode<T> currentNode;
-    int Count { get; set; }
+    public int Count { get; set; }
 
     /// <summary>
     /// Initiates current node

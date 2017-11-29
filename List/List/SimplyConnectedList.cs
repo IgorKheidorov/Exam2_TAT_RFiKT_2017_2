@@ -11,7 +11,7 @@ namespace List
     SimplyConnectedListNode<T> firstNode;
     SimplyConnectedListNode<T> lastNode;
     SimplyConnectedListNode<T> currentNode;
-    int Count { get; set; }
+    public int Count { get; set; }
 
     /// <summary>
     /// Initiates current node
@@ -26,9 +26,9 @@ namespace List
     /// </summary>
     /// <param name="node">Current node</param>
     /// <returns>Next Node</returns>
-    public SimplyConnectedListNode<T> GetNext(SimplyConnectedListNode<T> node)
+    public T GetNext(SimplyConnectedListNode<T> node)
     {
-      return node.NextElement;
+      return node.NextElement.Element;
     }
 
     /// <summary>
