@@ -34,5 +34,15 @@ namespace LinkedListProject.Tests
     {
       Assert.AreEqual(true, new DoubleLinkedList<int>(5).Contains(5));
     }
+
+    [TestMethod]
+    public void Addfirst_5value_listWith5inHead()
+    {
+      DoubleLinkedList<int> doubleLinkedList = new DoubleLinkedList<int>();
+      doubleLinkedList.Add(2);
+      doubleLinkedList.Add(4);
+      doubleLinkedList.AddFirst(9);
+      Assert.AreEqual(9, doubleLinkedList.Head.Value);
+    }
   }
 }
