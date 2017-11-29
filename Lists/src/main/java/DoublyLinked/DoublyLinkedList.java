@@ -29,6 +29,13 @@ public class DoublyLinkedList<T> implements Iterable<T>{
   }
 
   /**
+   * Returns the number of items in this queue.
+   */
+  public int size() {
+    return numberOfElements;
+  }
+
+  /**
    * Adds an element to the end of list.
    * @param gottenElement element we are adding.
    */

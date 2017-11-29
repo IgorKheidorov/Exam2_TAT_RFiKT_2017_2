@@ -29,12 +29,19 @@ public class SinglyLinkedList<T> implements Iterable<T> {
   }
 
   /**
+   * Returns the number of items in this queue.
+   */
+  public int size() {
+    return numberOfElements;
+  }
+
+  /**
    * Adds an element to the end of list.
    * @param gottenElement element we are adding.
    */
   public void add(T gottenElement) {
     Element<T> oldlast = last;
-    last = new Element<>();
+    last = new Element<T>();
     last.item =gottenElement;
     last.next = null;
     if (numberOfElements == 0) {
