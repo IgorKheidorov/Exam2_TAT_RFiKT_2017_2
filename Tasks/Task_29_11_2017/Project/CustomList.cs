@@ -1,69 +1,78 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
 
 namespace Project
 {
   /// <summary>
-  /// 
+  /// Custom class describes linked list
   /// </summary>
   /// <typeparam name="T"></typeparam>
-  public class CustomList<T> : IEnumerable<T>
+  public class CustomList<T>
   {
-    public Node<T> First { get; set; }
-    public Node<T> Last { get; set; }
+    //public Node<T> First { private get; set; }
+    //public Node<T> Last { private get; set; }
+    private Node<T> head;
+    private Node<T> tail;
     private int count;
+    private static Node<T> current;
 
     public int Count { get; }
 
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="data"></param>
-    public void Add(T data)
+    public CustomList()
     {
-      Node<T> node = new Node<T>(data);
+      current = head;
+    }
+    /// <summary>
+    /// Add item in list
+    /// </summary>
+    /// <param name="item">Data</param>
+    public void Add(T item)
+    {
+      Node<T> node = new Node<T>(item);
 
-      if (First == null)
+      if (head == null)
       {
-        First = node;
+        head = node;
       }
       else
       {
-        Last.Next = node;
+        tail.Next = node;
       }
-      Last = node;
+      tail = node;
 
       count++;
     }
 
     /// <summary>
-    /// 
+    /// Add item in the first position of the list
     /// </summary>
-    /// <param name="data"></param>
-    public void AppendFirst(T data)
+    /// <param name="item">Data</param>
+    public void Appendfirst(T item)
     {
-      Node<T> node = new Node<T>(data);
-      node.Next = First;
-      First = node;
+      Node<T> node = new Node<T>(item);
+      node.Next = head;
+      head = node;
       if (count == 0)
-        Last = First;
+        tail = head;
       count++;
     }
 
     /// <summary>
-    /// 
+    /// Insert item in the some position of the list
+    /// Throws exception if index is invalid
     /// </summary>
-    /// <param name="index"></param>
-    /// <param name="item"></param>
+    /// <param name="index">Position</param>
+    /// <param name="item">Data</param>
     public void Insert(int index, T item)
     {
-      if (index >= count)
+      if (index >= count || index < 0)
         throw new ArgumentOutOfRangeException();
 
       if (index == 0)
-        AppendFirst(item);
+        Appendfirst(item);
+      else if (index == count - 1)
+      {
+        Add(item);
+      }
       else
       {
         Node<T> node = new Node<T>(item);
@@ -75,24 +84,21 @@ namespace Project
 
         count++;
       }
-
-
-
     }
 
     /// <summary>
-    /// 
+    /// Remove item in list
     /// </summary>
-    /// <param name="data"></param>
-    /// <returns></returns>
-    public bool Remove(T data)
+    /// <param name="item">Data</param>
+    /// <returns>True if succesfull removing, false otherwise</returns>
+    public bool Remove(T item)
     {
-      Node<T> current = First;
+      Node<T> current = head;
       Node<T> previous = null;
 
       while (current != null)
       {
-        if (current.Value.Equals(data))
+        if (current.Value.Equals(item))
         {
           ChangeNodes(previous, current);
           count--;
@@ -106,12 +112,13 @@ namespace Project
     }
 
     /// <summary>
-    /// 
+    /// Remove item from some position in list
+    /// Throws exception if index is invalid
     /// </summary>
-    /// <param name="index"></param>
+    /// <param name="index">position</param>
     public void RemoveAt(int index)
     {
-      if (index >= count)
+      if (index >= count || index < 0 )
         throw new ArgumentOutOfRangeException();
 
       var current = GetElement(index);
@@ -119,32 +126,32 @@ namespace Project
     }
 
     /// <summary>
-    /// 
+    /// Check if the list is empty
     /// </summary>
-    /// <returns></returns>
+    /// <returns>True if empty, false otherwise</returns>
     public bool IsEmpty()
     {
       return count == 0;
     }
 
     /// <summary>
-    /// 
+    /// Clear list
     /// </summary>
     public void Clear()
     {
-      First = null;
-      Last = null;
+      head = null;
+      tail = null;
       count = 0;
     }
 
     /// <summary>
-    /// 
+    /// Check if list contains some data
     /// </summary>
-    /// <param name="data"></param>
-    /// <returns></returns>
+    /// <param name="data">checked data</param>
+    /// <returns>True if contains, else otherwise</returns>
     public bool Contains(T data)
     {
-      Node<T> current = First;
+      Node<T> current = head;
       while (current != null)
       {
         if (current.Value.Equals(data))
@@ -155,50 +162,43 @@ namespace Project
     }
 
     /// <summary>
-    /// 
+    /// Get index of item in list
     /// </summary>
-    /// <param name="item"></param>
-    /// <returns></returns>
+    /// <param name="item">item</param>
+    /// <returns>Index if list contains item, -1 otherwise</returns>
     public int IndexOf(T item)
     {
-      Node<T> current = First;
+      Node<T> current = head;
       int index = 0;
       while (current != null)
       {
-        index++;
         if (current.Value.Equals(item))
           return index;
         current = current.Next;
+        index++;
       }
       return -1;
     }
 
     /// <summary>
-    /// 
+    /// Get value of next elem in list
     /// </summary>
     /// <returns></returns>
-    public IEnumerator<T> GetEnumerator()
+    public T GetNext()
     {
-      return (IEnumerator<T>)((IEnumerable)this).GetEnumerator();
-    }
+      T value = current.Next.Value;
+      current = current.Next;
+      return value;
+    } 
 
     /// <summary>
-    /// 
-    /// </summary>
-    /// <returns></returns>
-    IEnumerator IEnumerable.GetEnumerator()
-    {
-      return GetEnumerator();
-    }
-
-    /// <summary>
-    /// 
+    /// Get element in list by index
     /// </summary>
     /// <param name="index"></param>
-    /// <returns></returns>
+    /// <returns>Node element</returns>
     private Node<T> GetElement(int index)
     {
-      Node<T> current = First;
+      Node<T> current = head;
 
       int currentIndex = 0;
       while (currentIndex != index)
@@ -210,10 +210,10 @@ namespace Project
     }
 
     /// <summary>
-    /// 
+    /// Help method to method Remove
     /// </summary>
-    /// <param name="previous"></param>
-    /// <param name="current"></param>
+    /// <param name="previous">DoublyNode</param>
+    /// <param name="current">DoublyNode</param>
     private void ChangeNodes(Node<T> previous, Node<T> current)
     {
       if (previous != null)
@@ -221,13 +221,13 @@ namespace Project
         previous.Next = current.Next;
 
         if (current.Next == null)
-          Last = previous;
+          tail = previous;
       }
       else
       {
-        First = First.Next;
-        if (First == null)
-          Last = null;
+        head = head.Next;
+        if (head == null)
+          tail = null;
       }
     }
   }

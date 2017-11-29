@@ -1,10 +1,12 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 
 namespace Project
 {
-  public class CustomLinkedList<T> : IEnumerable<T>
+  /// <summary>
+  /// 
+  /// </summary>
+  /// <typeparam name="T"></typeparam>
+  public class CustomLinkedList<T>
   {
     public DoublyNode<T> First { get; set; }
     public DoublyNode<T> Last { get; set; }
@@ -29,61 +31,6 @@ namespace Project
       }
       Last = node;
       count++;
-    }
-
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="data"></param>
-    public void AddFirst(T data)
-    {
-      DoublyNode<T> node = new DoublyNode<T>(data);
-      DoublyNode<T> temp = First;
-      node.Next = temp;
-      First = node;
-      if (count == 0)
-        Last = First;
-      else
-        temp.Previous = node;
-      count++;
-    }
-
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="data"></param>
-    /// <returns></returns>
-    public bool Remove(T data)
-    {
-      DoublyNode<T> current = First;
-
-      while (current != null)
-      {
-        if (current.Value.Equals(data))
-        {
-          break;
-        }
-        current = current.Next;
-      }
-      if (current != null)
-      {
-        ChangePreviousNextInDoublyNodes(current);
-        count--;
-        return true;
-      }
-      return false;
-    }
-
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="index"></param>
-    public void RemoveAt(int index)
-    {
-      if (index >= count)
-        throw new ArgumentOutOfRangeException();
-      DoublyNode<T> current = GetElement(index);
-      Remove(current.Value);
     }
 
     /// <summary>
@@ -123,6 +70,44 @@ namespace Project
       node.Previous = current.Previous;
 
       current.Previous = node;
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="data"></param>
+    /// <returns></returns>
+    public bool Remove(T data)
+    {
+      DoublyNode<T> current = First;
+
+      while (current != null)
+      {
+        if (current.Value.Equals(data))
+        {
+          break;
+        }
+        current = current.Next;
+      }
+      if (current != null)
+      {
+        ChangePreviousNextInDoublyNodes(current);
+        count--;
+        return true;
+      }
+      return false;
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="index"></param>
+    public void RemoveAt(int index)
+    {
+      if (index >= count)
+        throw new ArgumentOutOfRangeException();
+      DoublyNode<T> current = GetElement(index);
+      Remove(current.Value);
     }
 
     /// <summary>
@@ -178,24 +163,6 @@ namespace Project
         current = current.Next;
       }
       return -1;
-    }
-
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <returns></returns>
-    public IEnumerator<T> GetEnumerator()
-    {
-      return (IEnumerator<T>)((IEnumerable)this).GetEnumerator();
-    }
-
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <returns></returns>
-    IEnumerator IEnumerable.GetEnumerator()
-    {
-      return GetEnumerator();
     }
 
     /// <summary>
