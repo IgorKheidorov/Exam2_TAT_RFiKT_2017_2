@@ -18,7 +18,6 @@
     {
       Head = null;
       Tail = null;
-      Count++;
     }
 
     /// <summary>
