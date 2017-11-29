@@ -5,7 +5,6 @@
     public DoubleNode<T> Head { get; private set; }
     public DoubleNode<T> Tail { get; private set; }
     public int Count { get; private set; }
-    private DoubleNode<T> Current { get; set; }
 
     /// <summary>
     /// This is default constructor for DoubleLinkedList.
@@ -29,14 +28,6 @@
     }
 
     /// <summary>
-    /// This method initialize current element by head.
-    /// </summary>
-    public void InitCurrentByHead()
-    {
-      Current = Head;
-    }
-
-    /// <summary>
     /// This method adds element to list.
     /// </summary>
     /// <param name="value"> any value</param>
@@ -57,17 +48,24 @@
     }
 
     /// <summary>
-    /// This method gets next element. If it is last element, method will return current.
+    /// This methode gets value by index.
     /// </summary>
-    /// <returns> next element </returns>
-    public DoubleNode<T> GetNext()
+    /// <param name="index"> index of element </param>
+    /// <returns> value from list by index</returns>
+    public T GetValue(int index)
     {
-      if (Current.Next == null)
+      DoubleNode<T> current = Head;
+      int counter = 0;
+      while (current != null)
       {
-        return Current;
+        if (counter == index)
+        {
+          return current.Value;
+        }
+        current = current.Next;
+        counter++;
       }
-      Current = Current.Next;
-      return Current;
+      return current.Value;
     }
 
     /// <summary>
