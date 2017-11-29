@@ -103,7 +103,10 @@ namespace ComplexNumber
 
         public bool Compare(ComplexNumber toCompare)
         {
+            if (im.Equals(toCompare.im) && re.Equals(toCompare.re))
+            {
 
+            }
         }
 
         /// <summary>

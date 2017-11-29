@@ -10,7 +10,7 @@ namespace ComplexNumberTest
         [TestMethod]
         public void TestConstractor()
         {
-
+            Assert.AreEqual(0, );
         }
     }
 }
