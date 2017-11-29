@@ -28,5 +28,11 @@ namespace LinkedListProject.Tests
       linkedList.Remove(2);
       Assert.AreEqual(0, linkedList.Count);
     }
+
+    [TestMethod]
+    public void Contains_5inListWith5_truevalue()
+    {
+      Assert.AreEqual(true, new LinkedList<int>(5).Contains(5));
+    }
   }
 }

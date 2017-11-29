@@ -28,5 +28,11 @@ namespace LinkedListProject.Tests
       doubleLinkedList.Remove(2);
       Assert.AreEqual(0, doubleLinkedList.Count);
     }
+
+    [TestMethod]
+    public void Contains_5inListWith5_truevalue()
+    {
+      Assert.AreEqual(true, new DoubleLinkedList<int>(5).Contains(5));
+    }
   }
 }
