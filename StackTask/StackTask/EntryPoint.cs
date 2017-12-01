@@ -1,12 +1,10 @@
-﻿using System;
-
-namespace StackTask
+﻿namespace StackTask
 {
     /// <summary>
-    /// Main class of program for realization stack
+    /// Main class of program of realization stack
     /// contains creating a stack adding and removing elements and it clearing.
     /// </summary>
-    class Program
+    class EntryPoint
     {
         static void Main(string[] args)
         {

@@ -93,7 +93,7 @@ namespace Stack.Test
         }
 
         [TestMethod]
-        public void PushElementsInStackAndCheckValueAllElementsPositive()
+        public void PushElementsInStackAndCheckValueAllElementsUsingPopMethodPositive()
         {
             Stack<int> stack = new Stack<int>();
             for (int i = 0; i < 5; i++)
