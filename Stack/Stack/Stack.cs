@@ -68,7 +68,7 @@ namespace Stack
     }
 
     /// <summary>
-    /// Deletes all objects from stack
+    /// This method removes all objects from stack
     /// </summary>
     public void Clear()
     {
