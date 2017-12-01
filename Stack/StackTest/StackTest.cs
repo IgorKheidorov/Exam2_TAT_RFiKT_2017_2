@@ -79,7 +79,7 @@ namespace StackTest
       intStack.Push(1);
       intStack.Push(2);
       intStack.Clear();
-      Assert.IsTrue(intStack.Count == 0);
+      Assert.IsTrue(intStack.IsEmpty());
     }
   }
 }
