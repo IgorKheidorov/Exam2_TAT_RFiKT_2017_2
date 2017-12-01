@@ -91,4 +91,17 @@ public class MyStackTest {
     myStack.push("test3");
     assertEquals(myStack.peek(), "test3");
   }
+  @Test
+  public void clearForEmptyStack() {
+    MyStack myStack = new MyStack();
+    myStack.clear(myStack);
+    assertEquals(myStack.getSize(), 0);
+  }
+  @Test
+  public void clearForOneElenemtStack() {
+    MyStack myStack = new MyStack();
+    myStack.push("test");
+    myStack.clear(myStack);
+    assertEquals(myStack.getSize(), 0);
+  }
 }

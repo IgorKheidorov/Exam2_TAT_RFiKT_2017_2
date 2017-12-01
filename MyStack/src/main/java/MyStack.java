@@ -67,4 +67,16 @@ public class MyStack<E> {
       throw new NoSuchElementException("Underflow Exception") ;
     return (E)top.getData();
   }
+
+  /**
+   * THis method clear stack.
+   * @param myStack - input stack.
+   */
+  public void clear(MyStack myStack) {
+    if (!myStack.isEmpty()) {
+      for (int i = 0; i < myStack.getSize(); i++) {
+        myStack.pop();
+      }
+    }
+  }
 }
