@@ -9,7 +9,7 @@ namespace MyStack
   public class StackOnList<T>
   {
     public Node<T> Head { get; set; }
-    public int Count { get; set; }
+    public int Count { get; private set; }
 
     /// <summary>
     /// It adds an element to the top of the stack

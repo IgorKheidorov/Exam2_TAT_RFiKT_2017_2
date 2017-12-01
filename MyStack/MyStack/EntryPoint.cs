@@ -10,7 +10,7 @@ namespace MyStack
     /// <summary>
     /// Calls all methods
     /// </summary>
-    /// <param name="args"></param>
+    /// <param name="args">arguments from console</param>
     static void Main(string[] args)
     {
       try
