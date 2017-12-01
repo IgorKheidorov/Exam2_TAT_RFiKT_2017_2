@@ -5,7 +5,7 @@ namespace StackImplementation
   /// <summary>
   /// The point where program starts.
   /// </summary>
-  class Program
+  class EntryPoint
   {
     static void Main(string[] args)
     {
