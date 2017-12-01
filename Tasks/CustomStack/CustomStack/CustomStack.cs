@@ -3,8 +3,9 @@
 namespace CustomStack
 {
   /// <summary>
-  /// Custom stack realized on Nodes
+  /// Custom stack
   /// </summary>
+  /// <typeparam name="T">Any type of objects</typeparam>
   public class CustomStack<T>
   {
     private Node<T> head;
