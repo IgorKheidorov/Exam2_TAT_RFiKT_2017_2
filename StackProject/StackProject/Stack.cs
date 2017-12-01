@@ -3,9 +3,9 @@
 namespace StackProject
 {
   /// <summary>
-  /// This is class 
+  /// This is class for stack.
   /// </summary>
-  /// <typeparam name="T"></typeparam>
+  /// <typeparam name="T"> Any type of value </typeparam>
   public class Stack<T>
   {
     public Node<T> Head { get; private set; }
@@ -64,7 +64,7 @@ namespace StackProject
     }
 
     /// <summary>
-    /// This method clear stack.
+    /// This method clears stack.
     /// </summary>
     public void Clear()
     {
