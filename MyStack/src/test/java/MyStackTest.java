@@ -98,9 +98,17 @@ public class MyStackTest {
     assertEquals(myStack.getSize(), 0);
   }
   @Test
-  public void clearForOneElenemtStack() {
+  public void clearForOneElementsStack() {
     MyStack myStack = new MyStack();
     myStack.push("test");
+    myStack.clear(myStack);
+    assertEquals(myStack.getSize(), 0);
+  }
+  @Test
+  public void clearForSeveralElementsStack() {
+    MyStack myStack = new MyStack();
+    myStack.push("test");
+    myStack.push("test1");
     myStack.clear(myStack);
     assertEquals(myStack.getSize(), 0);
   }

@@ -74,7 +74,7 @@ public class MyStack<E> {
    */
   public void clear(MyStack myStack) {
     if (!myStack.isEmpty()) {
-      for (int i = 0; i < myStack.getSize(); i++) {
+      for (int i = 0; i <= myStack.getSize(); i++) {
         myStack.pop();
       }
     }
