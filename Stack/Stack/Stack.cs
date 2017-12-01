@@ -72,12 +72,9 @@ namespace Stack
     /// </summary>
     public void Clear()
     {
-      Node<T> currentNode = topElement;
       while(Count > 0)
       {
-        topElement = currentNode.NextElement;
-        currentNode = null;
-        Count--;
+        T valueToRemove = Pop();
       }
     }
   }
