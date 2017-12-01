@@ -6,28 +6,29 @@ namespace CustomStack.Tests
   [TestFixture]
   public class CustomStackTests
   {
-    private static object[] sourcePush = new object[]
+    private static object[] sourceElems = new object[]
     {
       new object[] {new int[] {1}},
       new object[] {new int[] {1, 2}},
       new object[] {new int[] {1, 2, 3, 4, 5}},
     };
 
-    private static object[] sourcePushPeakStack = new object[]
-    {
-      new object[] {new int[] {1}, 1},
-      new object[] {new int[] {1, 2, 3, 4, 5}, 5},
-    };
-
-    private static object[] sourcePopPeakStack = new object[]
+    private static object[] sourceElemsPenultimateElem = new object[]
     {
       new object[] {new int[] {1, 2}, 1},
       new object[] {new int[] {1, 2, 3, 4, 5}, 4},
     };
 
+    private static object[] sourceElemsLastElem = new object[]
+    {
+      new object[] {new int[] {1}, 1},
+      new object[] {new int[] {1, 2, 3, 4, 5}, 5},
+    };
+
+
     // Push tests
-    [Test, TestCaseSource("sourcePush")]
-    public void PushElemsCountEqualStackCount(int[] elems)
+    [Test, TestCaseSource("sourceElems")]
+    public void PushStackCountEqualStackCount(int[] elems)
     {
       CustomStack<int> stack = new CustomStack<int>();
       foreach (var elem in elems)
@@ -37,8 +38,8 @@ namespace CustomStack.Tests
       Assert.AreEqual(stack.Count, elems.Length);
     }
 
-    [Test, TestCaseSource("sourcePushPeakStack")]
-    public void PushElemsPeekElemIsLast(int[] elems, int lastElem)
+    [Test, TestCaseSource("sourceElemsLastElem")]
+    public void PeekStackLastElemIsValid(int[] elems, int lastElem)
     {
       CustomStack<int> stack = new CustomStack<int>();
       foreach (var elem in elems)
@@ -49,8 +50,8 @@ namespace CustomStack.Tests
     }
 
     // Pop tests
-    [Test, TestCaseSource("sourcePushPeakStack")]
-    public void PopElemValidValue(int[] elems, int deletedValue)
+    [Test, TestCaseSource("sourceElemsLastElem")]
+    public void PopStackDeletedElemIsValid(int[] elems, int deletedValue)
     {
       CustomStack<int> stack = new CustomStack<int>();
       foreach (var elem in elems)
@@ -60,8 +61,8 @@ namespace CustomStack.Tests
       Assert.AreEqual(stack.Pop(), deletedValue);
     }
 
-    [Test, TestCaseSource("sourcePopPeakStack")]
-    public void PopElemPeekElemIsValid(int[] elems, int currentLastElem)
+    [Test, TestCaseSource("sourceElemsPenultimateElem")]
+    public void PopStackCurrentLastIsValid(int[] elems, int currentLastElem)
     {
       CustomStack<int> stack = new CustomStack<int>();
       foreach (var elem in elems)
@@ -72,7 +73,7 @@ namespace CustomStack.Tests
       Assert.AreEqual(stack.Peek(), currentLastElem);
     }
 
-    [Test, TestCaseSource("sourcePush")]
+    [Test, TestCaseSource("sourceElems")]
     public void PopAllElemsStackIsEmpty(int[] elems)
     {
       CustomStack<int> stack = new CustomStack<int>();
@@ -96,7 +97,7 @@ namespace CustomStack.Tests
       Assert.True(stack.IsEmpty());
     }
 
-    [Test, TestCaseSource("sourcePush")]
+    [Test, TestCaseSource("sourceElems")]
     public void ClearStackIsEmpty(int[] elems)
     {
       CustomStack<int> stack = new CustomStack<int>();
@@ -125,7 +126,7 @@ namespace CustomStack.Tests
       Assert.Throws<InvalidOperationException>(() => stack.Peek());
     }
 
-    [Test, TestCaseSource("sourcePush")]
+    [Test, TestCaseSource("sourceElems")]
     public void PopMoreThanAddedElemsThrowsOperationException(int[] elems)
     {
       CustomStack<int> stack = new CustomStack<int>();
