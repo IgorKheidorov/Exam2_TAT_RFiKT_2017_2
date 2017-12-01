@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomStack", "CustomStack\CustomStack.csproj", "{4B50D5D1-8A75-408E-91E6-8A4D99B126F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomStack.Tests", "CustomStack.Tests\CustomStack.Tests.csproj", "{4BF727AC-B265-4CF6-AF93-FC89A2B1161B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4B50D5D1-8A75-408E-91E6-8A4D99B126F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B50D5D1-8A75-408E-91E6-8A4D99B126F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B50D5D1-8A75-408E-91E6-8A4D99B126F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B50D5D1-8A75-408E-91E6-8A4D99B126F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BF727AC-B265-4CF6-AF93-FC89A2B1161B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BF727AC-B265-4CF6-AF93-FC89A2B1161B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BF727AC-B265-4CF6-AF93-FC89A2B1161B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BF727AC-B265-4CF6-AF93-FC89A2B1161B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
