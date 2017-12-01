@@ -8,10 +8,17 @@ namespace Stack.Test
     public class StackTests
     {
         [TestMethod]
-        public void CreateStackPositive()
+        public void CreateEmptyStackPositive()
         {
             Stack<int> stack = new Stack<int>();
             Assert.IsTrue(stack.IsEmpty);
+        }
+
+        [TestMethod]
+        public void CreateEmptyStackAndCheckCountPositive()
+        {
+            Stack<int> stack = new Stack<int>();
+            Assert.AreEqual(0, stack.Count);
         }
 
         [TestMethod]
@@ -34,7 +41,7 @@ namespace Stack.Test
         }
 
         [TestMethod]
-        public void PeekFirstElementInStackPositive()
+        public void PeekFirstElementInEmptyStackPositive()
         {
             Stack<int> stack = new Stack<int>();
             stack.Push(1);
@@ -62,7 +69,6 @@ namespace Stack.Test
             }
             Assert.AreEqual(5, stack.Count);
         }
-
 
         [ExpectedException(typeof(InvalidOperationException))]
         [TestMethod]
