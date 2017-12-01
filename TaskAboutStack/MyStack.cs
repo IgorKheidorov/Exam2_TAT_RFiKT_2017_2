@@ -90,7 +90,6 @@ namespace TaskAboutStack
       {
         return;
       }
-      Element<Type> current = tail;
       while (count > 0)
       {
         this.Pop();
