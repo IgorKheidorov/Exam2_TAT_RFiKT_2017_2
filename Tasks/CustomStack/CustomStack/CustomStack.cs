@@ -24,7 +24,8 @@ namespace CustomStack
     }
 
     /// <summary>
-    /// Get value of head element, and remove it from stack
+    /// Method gets value of head element, and removes it from stack
+    /// Throws if pop from empty stack
     /// </summary>
     /// <returns>Deleted value</returns>
     public T Pop()
@@ -40,7 +41,8 @@ namespace CustomStack
     }
 
     /// <summary>
-    /// Get value of stacks head
+    /// Method gets value of stacks head
+    /// Throws if peek from empty stack
     /// </summary>
     /// <returns>Current head value</returns>
     public T Peek()
