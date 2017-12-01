@@ -22,6 +22,7 @@ namespace CustomStack.Tests
     private static object[] sourceElemsLastElem = new object[]
     {
       new object[] {new int[] {1}, 1},
+      new object[] {new int[] {1, 2}, 2},
       new object[] {new int[] {1, 2, 3, 4, 5}, 5},
     };
 
@@ -109,7 +110,7 @@ namespace CustomStack.Tests
       Assert.True(stack.IsEmpty());
     }
 
-    // Operation Exception tests
+    // OperationException tests
     [Test]
     public void PopEmptyStackThrowsOperationException()
     {
