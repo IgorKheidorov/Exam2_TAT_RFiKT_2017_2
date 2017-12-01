@@ -25,13 +25,12 @@ public class MyStackTest {
     assertEquals("string one", myStack.pop());
   }
 
-  @org.junit.Test (expected = EmptyStackException.class)
+  @org.junit.Test
   public void peek() {
     MyStack<String> myStack = new MyStack<String>();
     myStack.push("string one");
     myStack.push("string two");
-    myStack.push("string three");
-    assertEquals("string one", myStack.peek());
+    assertEquals("string two", myStack.peek());
   }
 
   @org.junit.Test
@@ -39,6 +38,11 @@ public class MyStackTest {
   }
 
   @org.junit.Test
-  public void clear() {
+  public void getSize() {
+    MyStack<String> myStack = new MyStack<String>();
+    myStack.push("string one");
+    myStack.push("string two");
+    myStack.push("string three");
+    assertEquals(3, myStack.getSize());
   }
 }
