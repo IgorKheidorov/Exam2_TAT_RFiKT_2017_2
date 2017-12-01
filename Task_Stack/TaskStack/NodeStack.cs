@@ -8,7 +8,7 @@ namespace TaskStack
   public class NodeStack<T>
   {
     Node<T> head;
-    public int Count { get; set; }
+    public int Count { get; private set; }
    
     /// <summary>
     /// The method adds an element to the top of the stack.
