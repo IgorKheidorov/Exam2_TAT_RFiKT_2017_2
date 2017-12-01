@@ -15,12 +15,23 @@ namespace TaskAboutStack.Tests
     }
 
     [TestMethod]
-    public void TestPeek()
+    public void TestPeekWithOneElement()
     {
       MyStack<string> stack = new MyStack<string>();
       stack.Push("1");
       Assert.AreEqual("1", stack.Peek());
       Assert.IsTrue(stack.count == 1);
+    }
+
+    [TestMethod]
+    public void TestPeekOnThreeElement()
+    {
+      MyStack<string> stack = new MyStack<string>();
+      stack.Push("1");
+      stack.Push("2");
+      stack.Push("3");
+      Assert.AreEqual("3", stack.Peek());
+      Assert.IsTrue(stack.count == 3);
     }
 
     [TestMethod]
