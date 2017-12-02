@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace NoteBookTask
 {
@@ -11,12 +7,23 @@ namespace NoteBookTask
         static void Main(string[] args)
         {
             Note note = new Note();
-            note.Name = "Name";
+            note.Name = "Note";
             note.Text = "This is new note";
-            note.TimeOfCreating = DateTime.UtcNow;
 
-            Console.WriteLine(note);
-            Console.WriteLine(note.ToString());
+            WorkerWithNoteBook worker = new WorkerWithNoteBook();
+            NoteBookProvider provider = new NoteBookProvider();
+
+            List<ICommand> commands = new List<ICommand>();
+            commands.Add(new CreateNoteBook(provider));
+            commands.Add(new AddNote(provider, note));
+            commands.Add(new DisplayNotes(provider));
+            
+            foreach (var command in commands)
+            {
+                worker.SetCommand(command);
+                worker.Run();
+            }
         }
     }
 }
+ 

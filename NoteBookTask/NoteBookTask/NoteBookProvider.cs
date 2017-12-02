@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace NoteBookTask
 {
+    //reseiver
     public class NoteBookProvider
     {
         private static NoteBook notebook;
@@ -53,7 +54,7 @@ namespace NoteBookTask
             return findNote;
         }
 
-        public void DisplayNotes(DateTime data)
+        public void DisplayNotes()
         {
             Console.WriteLine(notebook.NoteBookName);
             Console.WriteLine(notebook.TimeOfNoteBookCreating);
@@ -100,21 +101,21 @@ namespace NoteBookTask
         private void ReadNote(string line, int count)
         {
             count %= 3;
-            Note note = new Note();
+            Note note;
             if (count == 1)
             {
-                note.Name = line;
+                note = new Note(line);
             }
             else if (count == 2)
             {
+                note = notebook.Notes.Last();
                 note.Text = line;
             }
             else if (count == 0)
             {
+                note = notebook.Notes.Last();
                 note.TimeOfCreating = DateTime.Parse(line);
             }
-
-            notebook.Notes.Add(note);
         }
     }
 }

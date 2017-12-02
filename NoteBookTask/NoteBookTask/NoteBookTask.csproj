@@ -42,6 +42,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddNote.cs" />
+    <Compile Include="CreateNoteBook.cs" />
+    <Compile Include="DisplayNotes.cs" />
+    <Compile Include="FindNoteByContext.cs" />
+    <Compile Include="FindNoteByCreatingData.cs" />
     <Compile Include="ICommand.cs" />
     <Compile Include="EntryPoint.cs" />
     <Compile Include="Note.cs" />
@@ -49,6 +54,9 @@
     <Compile Include="NoteBookConsoleView.cs" />
     <Compile Include="NoteBookProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReadNoteBookFromFile.cs" />
+    <Compile Include="WorkerWithNoteBook.cs" />
+    <Compile Include="WriteNoteBookToFile.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

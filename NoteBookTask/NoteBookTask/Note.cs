@@ -16,14 +16,14 @@ namespace NoteBookTask
         {
             Name = "";
             Text = "";
-            TimeOfCreating = DateTime.Now;
+            TimeOfCreating = DateTime.UtcNow;
         }
 
         public Note(string name)
         {
             Name = name;
             Text = "";
-            TimeOfCreating = DateTime.Now;
+            TimeOfCreating = DateTime.UtcNow;
         }
 
         public override bool Equals(object obj)
