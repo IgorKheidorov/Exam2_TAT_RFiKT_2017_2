@@ -2,9 +2,10 @@ package SkuratovichSiarhey.by.ComandPattern.Comands;
 
 import SkuratovichSiarhey.by.ComandPattern.Command;
 import SkuratovichSiarhey.by.NoteBook;
+import SkuratovichSiarhey.by.NoteBookConsoleView;
 
 /**
- * Created by siarhey on 02.12.17.
+ * Implements users command of showing full list of notes.
  */
 public class ShowNotesCommand implements Command {
   private NoteBook noteBook;
@@ -13,18 +14,11 @@ public class ShowNotesCommand implements Command {
     this.noteBook = noteBook;
   }
 
+  /**
+   * Shows full list of notes.
+   */
   public void execute() {
-/*
-    for (int i = 0; i < notes.size(); i++) {
-
-      System.out.println(i + 1).append(")\n");
-      fullList.append(notes.get(i).getHead()).append("\n");
-      fullList.append(notes.get(i).getContent()).append("\n");
-      fullList.append(notes.get(i).getDate());
-      if(i != notes.size() - 1) {
-        fullList.append("\n");
-      }
-    }*/
-    //fullList.toString();
+    NoteBookConsoleView noteBookConsoleView = new NoteBookConsoleView(noteBook);
+    noteBookConsoleView.print("full");
   }
 }

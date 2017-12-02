@@ -20,6 +20,10 @@ public class NoteBook {
     this.notes = new ArrayList<Note>();
   }
 
+  public String getName() {
+    return name;
+  }
+
   /**
    * Adds new note to SkuratovichSiarhey.by.NoteBook.
    */

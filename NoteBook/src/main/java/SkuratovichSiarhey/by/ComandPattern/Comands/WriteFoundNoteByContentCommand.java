@@ -5,7 +5,7 @@ import SkuratovichSiarhey.by.NoteBookConsoleView;
 import SkuratovichSiarhey.by.NoteBookProvider;
 
 /**
- * Created by siarhey on 02.12.17.
+ * Implements users command of writing found notes by specified content in specified NoteBook.
  */
 public class WriteFoundNoteByContentCommand implements Command{
 
@@ -17,8 +17,11 @@ public class WriteFoundNoteByContentCommand implements Command{
     this.content = content;
   }
 
+  /**
+   * Writes found notes by content in NoteBook.
+   */
   public void execute() {
-    /*NoteBookConsoleView noteBookConsoleView = new NoteBookConsoleView(noteBook);
-    noteBookConsoleView.print(noteBook.findByContent(content));*/
+    NoteBookConsoleView noteBookConsoleView = new NoteBookConsoleView(noteBook);
+    noteBookConsoleView.print(noteBook.findByContent(content));
   }
 }

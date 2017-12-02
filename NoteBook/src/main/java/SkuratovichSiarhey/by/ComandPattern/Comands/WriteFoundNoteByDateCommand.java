@@ -1,12 +1,10 @@
 package SkuratovichSiarhey.by.ComandPattern.Comands;
-
 import SkuratovichSiarhey.by.ComandPattern.Command;
 import SkuratovichSiarhey.by.NoteBook;
 import SkuratovichSiarhey.by.NoteBookConsoleView;
-import SkuratovichSiarhey.by.NoteBookProvider;
 
 /**
- * Created by siarhey on 02.12.17.
+ * Implements users command of writing found notes by specified date in specified NoteBook.
  */
 public class WriteFoundNoteByDateCommand implements Command {
   private NoteBook noteBook;
@@ -17,8 +15,11 @@ public class WriteFoundNoteByDateCommand implements Command {
     this.date = date;
   }
 
+  /**
+   * Writes found notes by date in NoteBook.
+   */
   public void execute() {
-    /*NoteBookConsoleView noteBookConsoleView = new NoteBookConsoleView();
-    noteBookConsoleView.print(noteBook.findByDate(date));;*/
+    NoteBookConsoleView noteBookConsoleView = new NoteBookConsoleView(noteBook);
+    noteBookConsoleView.print(noteBook.findByDate(date));
   }
 }
