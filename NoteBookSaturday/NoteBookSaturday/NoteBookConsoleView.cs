@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace NoteBookSaturday
 {
-    class NoteBookConsoleView
+    /// <summary>
+    /// Class for viewing notebook by printing data on console.
+    /// </summary>
+    public class NoteBookConsoleView
     {
         private NoteBook noteBook {get; set; }
 
@@ -42,14 +45,36 @@ namespace NoteBookSaturday
             while (noteBook.MoveNext());
         }
 
+        /// <summary>
+        /// Print note with certain date.
+        /// </summary>
+        /// <param name="dateOfNote"> Date of note to print. </param>
         public void Print(DateTime dateOfNote)
         {
-            if (noteBook.GetNoteByDate(dateOfNote) != null)
-            {
-
-            }
+            Console.WriteLine(noteBook.GetNoteByDate(dateOfNote) == null ? 
+                "Note with such date do not exist." : 
+                noteBook.GetNoteByDate(dateOfNote).ToString());
         }
 
-///-данные об одной записи,
+        /// <summary>
+        /// If choose is 1, function find by title, else by record.
+        /// </summary>
+        /// <param name="dateOfNote"> Text of title or record. </param>
+        /// <param name="choose"> If choose = 1, function find by title, else by record. </param>
+        public void Print(string dataFromNote, int choose)
+        {
+            if (choose == 1)
+            {
+                Console.WriteLine(noteBook.GetNoteByTitle(dataFromNote) == null ?
+                                "Note with such title do not exist." :
+                                noteBook.GetNoteByTitle(dataFromNote).ToString());
+            }
+            else
+            {
+                Console.WriteLine(noteBook.GetNoteByRecord(dataFromNote) == null ?
+                                "Note with such record do not exist." :
+                                noteBook.GetNoteByRecord(dataFromNote).ToString());
+            }
+        }
     }
 }

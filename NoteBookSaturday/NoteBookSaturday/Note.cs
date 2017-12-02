@@ -31,16 +31,38 @@ namespace NoteBookSaturday
         /// <returns> True if equals. </returns>
         public bool Equals(Note note)
         {
-            return record.Equals(note.record) && title.Equals(note.title) && creatingTime.Equals(note.creatingTime);
+            if ( note == null || creatingTime != note.creatingTime)
+            {
+                return false;
+            }
+
+            if (record == null && note.record == null && title == null && note.title == null)
+            {
+                return true;
+            }
+            else
+            {
+                if (record == null || note.record == null)
+                {
+                    return title == note.title;
+                }
+                if (title == null || note.title == null)
+                {
+                    return record == note.record;
+                }
+                return record.Equals(note.record) && title.Equals(note.title);
+            }
         }
 
         /// <summary>
-        /// 
+        /// Returns creating time if another fields empty.
         /// </summary>
-        /// <returns> Title,  </returns>
+        /// <returns> </returns>
         public override string ToString()
         {
-            return title == String.Empty ? (record == String.Empty ? null : record) : (title + (record == String.Empty ? null : "\n" + record));
+            return title == String.Empty ? 
+                (record == String.Empty ? creatingTime.ToString() : record + "\n" + creatingTime.ToString()) : 
+                (title + "\n" + (record == String.Empty ? creatingTime.ToString() : record + "\n" + creatingTime.ToString()));
         }
 
         /// <summary>
@@ -49,6 +71,18 @@ namespace NoteBookSaturday
         /// <returns> Combination of fields hash code. </returns>
         public override int GetHashCode()
         {
+            if (record == null && title == null)
+            {
+                return creatingTime.GetHashCode();
+            }
+            if (record == null && title != null)
+            {
+                return title.GetHashCode() + creatingTime.GetHashCode();
+            }
+            if (record != null && title == null)
+            {
+                return record.GetHashCode() + creatingTime.GetHashCode();
+            }
             return record.GetHashCode() + title.GetHashCode() + creatingTime.GetHashCode();
         }
     }

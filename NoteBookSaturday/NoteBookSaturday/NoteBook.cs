@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 
 namespace NoteBookSaturday
 {
@@ -190,7 +190,7 @@ namespace NoteBookSaturday
         /// <returns></returns>
         public bool Equals(NoteBook noteBook)
         {
-            return GetHashCode() == noteBook.GetHashCode() ? true : false ;
+            return this == noteBook ? true : false ;
         }
 
         /// <summary>
@@ -298,5 +298,40 @@ namespace NoteBookSaturday
             }
             return noteToString.ToString();
         }
+
+        /// <summary>
+        /// Write in file all notes from notebook.
+        /// </summary>
+        /// <param name="path"> Path to file in that methode will write notes. </param>
+        public void WriteInFile(string path)
+        {
+            StreamWriter file = new StreamWriter(path);
+            foreach (Note note in notes)
+            {
+                file.WriteLine(note.title);
+                file.WriteLine(note.record);
+                file.WriteLine(note.creatingTime);
+                file.WriteLine();
+            }
+        }
+
+        /// <summary>
+        /// Add notes from file to notebook.
+        /// </summary>
+        /// <param name="path"> Path to file with notes. </param>
+        public void AddFromFile(string path)
+        {
+            string[] lines = File.ReadAllLines(path);
+
+            for (int i = 0; i < lines.Length / 4; i++)
+            {
+                Note note = new Note();
+                note.title = lines[i * 4];
+                note.record = lines[i * 4 + 1];
+                note.creatingTime = Convert.ToDateTime(lines[i * 4 + 2]);
+                notes.Add(note);
+            }
+        }
+
     }
 }
