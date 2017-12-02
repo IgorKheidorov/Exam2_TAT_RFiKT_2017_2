@@ -1,12 +1,12 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace Notepad.Tests
 {
-  [TestClass]
+  [TestFixture]
   public class NoteBookTests
   {
-    [TestMethod]
+    [Test]
     public void TestMethod1()
     {
     }

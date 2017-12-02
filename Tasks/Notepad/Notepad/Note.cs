@@ -12,9 +12,6 @@ namespace Notepad
   /// </summary>
   public class Note
   {
-    private static int id;
-
-    public int Id { get; }
     public DateTime Date { get; }
     public string Title { get; set; }
     public string Content { get; set; }
@@ -29,7 +26,6 @@ namespace Notepad
     {
       Title = title;
       Date = DateTime.Now;
-      Id = id++;
     }
 
     /// <summary>
@@ -59,12 +55,12 @@ namespace Notepad
 
     /// <summary>
     /// Overrided toString method
-    /// Looks like id+title+date+content
+    /// Looks like title+date+content
     /// </summary>
     /// <returns>Integer hashcode</returns>
     public override string ToString()
     {
-      StringBuilder sb = new StringBuilder(Id).AppendLine();
+      StringBuilder sb = new StringBuilder();
       return sb.AppendLine(Title).AppendLine(Date.ToLongDateString()).AppendLine(Content).ToString();
     }
   }
