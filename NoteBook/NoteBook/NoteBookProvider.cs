@@ -5,7 +5,7 @@ namespace Notebook
   /// <summary>
   /// The substance to work with note book, also needed to implement command pattern.
   /// </summary>
-  class NoteBookProvider
+  public class NoteBookProvider
   {
     Command command;
     public void SetCommand(Command command)

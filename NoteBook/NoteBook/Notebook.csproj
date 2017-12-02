@@ -54,7 +54,7 @@
     <Compile Include="NoteBook.cs" />
     <Compile Include="NoteBookConsoleViewer.cs" />
     <Compile Include="NoteBookProvider.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="EntryPoint.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

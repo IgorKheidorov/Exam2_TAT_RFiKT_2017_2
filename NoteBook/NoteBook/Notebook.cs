@@ -8,7 +8,7 @@ namespace Notebook
   /// <summary>
   /// Describes the substance of note book and methods to work with it.
   /// </summary>
-  class NoteBook
+  public class NoteBook
   {
     public List<Note> Notes { get; set; }
     public void CreateNoteBook()

@@ -4,7 +4,7 @@ namespace Notebook.CommandImplementation
   /// <summary>
   /// This class implements create note book function.
   /// </summary>
-  class CreateNoteBook : Command
+  public class CreateNoteBook : Command
   {
     NoteBook noteBook;
     public CreateNoteBook(NoteBook noteBook)

@@ -5,7 +5,7 @@ namespace Notebook.CommandImplementation
   /// <summary>
   /// This class implements search by time of creation function.
   /// </summary>
-  class SearchByTimeOfCreation : Command
+  public class SearchByTimeOfCreation : Command
   {
     NoteBook noteBook;
     DateTime time;

@@ -4,7 +4,7 @@ namespace Notebook.CommandImplementation
   /// <summary>
   /// This class implements print all note function.
   /// </summary>
-  class PrintNoteBook : Command
+  public class PrintNoteBook : Command
   {
     NoteBookConsoleViewer viewer;
 

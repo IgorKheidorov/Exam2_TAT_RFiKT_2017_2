@@ -5,7 +5,7 @@ namespace Notebook
   /// <summary>
   /// Point where programm starts.
   /// </summary>
-  class EntryPoint
+  public class EntryPoint
   {
     static void Main(string[] args)
     {

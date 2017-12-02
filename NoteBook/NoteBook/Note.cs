@@ -5,7 +5,7 @@ namespace Notebook
   /// <summary>
   /// Describes composit element of note book.
   /// </summary>
-  class Note
+  public class Note
   {
     public string Value { get; set; }
     public string Title { get; set; }

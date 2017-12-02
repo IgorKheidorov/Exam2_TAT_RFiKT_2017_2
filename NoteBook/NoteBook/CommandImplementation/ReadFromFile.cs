@@ -4,7 +4,7 @@ namespace Notebook.CommandImplementation
   /// <summary>
   /// This class implements read from file function.
   /// </summary>
-  class ReadFromFile
+  public class ReadFromFile
   {
     NoteBook noteBook;
     string path;

@@ -4,7 +4,7 @@ namespace Notebook.CommandImplementation
   /// <summary>
   /// This class implements write into file function.
   /// </summary>
-  class WriteIntoFile
+  public class WriteIntoFile
   {
     NoteBook noteBook;
     string path;

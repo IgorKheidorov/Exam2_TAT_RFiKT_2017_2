@@ -4,7 +4,7 @@ namespace Notebook.CommandImplementation
   /// <summary>
   /// This class implements search by value function.
   /// </summary>
-  class SearchByValue : Command
+  public class SearchByValue : Command
   {
     NoteBook noteBook;
     string value;

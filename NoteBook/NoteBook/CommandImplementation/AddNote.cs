@@ -4,7 +4,7 @@ namespace Notebook.CommandImplementation
   /// <summary>
   /// This class implements add note function.
   /// </summary>
-  class AddNote : Command
+  public class AddNote : Command
   {
     NoteBook noteBook;
     string value;

@@ -5,7 +5,7 @@ namespace Notebook
   /// <summary>
   /// Implements write into console notes from note book.
   /// </summary>
-  class NoteBookConsoleViewer
+  public class NoteBookConsoleViewer
   {
     NoteBook noteBook;
 
