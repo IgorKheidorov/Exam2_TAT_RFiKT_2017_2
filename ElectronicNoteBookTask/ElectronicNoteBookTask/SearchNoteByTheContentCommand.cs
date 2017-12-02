@@ -36,5 +36,14 @@ namespace ElectronicNoteBookTask
             NoteBookConsoleView noteBookConsoleView = new NoteBookConsoleView();
             noteBookConsoleView.Print(note);
         }
+
+        /// <summary>
+        /// Override method returns Note in form of string. Method is using in tests.
+        /// </summary>
+        /// <returns>Returns string notes</returns>
+        public override string ToString()
+        {
+            return note.ToString();
+        }
     }
 }

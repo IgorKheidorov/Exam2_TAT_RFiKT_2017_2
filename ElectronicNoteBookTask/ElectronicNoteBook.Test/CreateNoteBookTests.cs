@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ElectronicNoteBookTask;
 
 namespace ElectronicNoteBook.Test
@@ -30,7 +29,7 @@ namespace ElectronicNoteBook.Test
         }
 
         [TestMethod]
-        public void CreateNoteBookDatePositive()
+        public void CreateNoteBookDateNegative()
         {
             Invoker invoker = new Invoker();
             NoteBook noteBook = new NoteBook("title");
@@ -39,6 +38,5 @@ namespace ElectronicNoteBook.Test
             invoker.Run();
             Assert.AreNotEqual("", noteBook.Date.ToString());
         }
-
     }
 }
