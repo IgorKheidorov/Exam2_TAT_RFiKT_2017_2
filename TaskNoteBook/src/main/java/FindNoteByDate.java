@@ -2,7 +2,7 @@
  * Finds the note by it date of creation.
  */
 public class FindNoteByDate implements ICommand {
-  private NoteBookProvider receiver;
+  private Receiver receiver;
   private String date;
 
   /**
@@ -11,7 +11,7 @@ public class FindNoteByDate implements ICommand {
    * @param receiver used by command pattern
    * @param date     sought date
    */
-  public FindNoteByDate(NoteBookProvider receiver, String date) {
+  public FindNoteByDate(Receiver receiver, String date) {
     this.receiver = receiver;
     this.date = date;
   }

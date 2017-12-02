@@ -2,14 +2,14 @@
  * Displays notes.
  */
 public class DisplayNotes implements ICommand {
-  private NoteBookProvider receiver;
+  private Receiver receiver;
 
   /**
    * Constructor for this class.
    *
    * @param receiver used by command pattern
    */
-  public DisplayNotes(NoteBookProvider receiver) {
+  public DisplayNotes(Receiver receiver) {
     this.receiver = receiver;
   }
 

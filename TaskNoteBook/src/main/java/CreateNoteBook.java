@@ -2,14 +2,14 @@
  * Creates new NoteBook.
  */
 public class CreateNoteBook implements ICommand {
-  private NoteBookProvider receiver;
+  private Receiver receiver;
 
   /**
    * Constructor for this class.
    *
    * @param receiver used by command pattern
    */
-  public CreateNoteBook(NoteBookProvider receiver) {
+  public CreateNoteBook(Receiver receiver) {
     this.receiver = receiver;
   }
 

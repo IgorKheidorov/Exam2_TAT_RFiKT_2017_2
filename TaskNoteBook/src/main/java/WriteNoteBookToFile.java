@@ -2,14 +2,14 @@
  * Writes the NoteBook to the file.
  */
 public class WriteNoteBookToFile implements ICommand {
-  private NoteBookProvider receiver;
+  private Receiver receiver;
 
   /**
    * Constructor for this class.
    *
    * @param receiver used by command pattern
    */
-  public WriteNoteBookToFile(NoteBookProvider receiver) {
+  public WriteNoteBookToFile(Receiver receiver) {
     this.receiver = receiver;
   }
 

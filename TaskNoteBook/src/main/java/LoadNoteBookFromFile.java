@@ -2,14 +2,14 @@
  * Loads the NoteBook from the file.
  */
 public class LoadNoteBookFromFile implements ICommand {
-  private NoteBookProvider receiver;
+  private Receiver receiver;
 
   /**
    * Constructor for this class.
    *
    * @param receiver used by command pattern
    */
-  public LoadNoteBookFromFile(NoteBookProvider receiver) {
+  public LoadNoteBookFromFile(Receiver receiver) {
     this.receiver = receiver;
   }
 

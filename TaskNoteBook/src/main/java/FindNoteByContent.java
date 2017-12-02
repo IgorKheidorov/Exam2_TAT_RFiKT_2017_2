@@ -2,7 +2,7 @@
  * Finds the note by it content.
  */
 public class FindNoteByContent implements ICommand {
-  private NoteBookProvider receiver;
+  private Receiver receiver;
   private String content;
 
   /**
@@ -11,7 +11,7 @@ public class FindNoteByContent implements ICommand {
    * @param receiver used by command pattern
    * @param content  sought content
    */
-  public FindNoteByContent(NoteBookProvider receiver, String content) {
+  public FindNoteByContent(Receiver receiver, String content) {
     this.receiver = receiver;
     this.content = content;
   }
