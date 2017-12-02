@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElectronicNoteBookTask", "ElectronicNoteBookTask\ElectronicNoteBookTask.csproj", "{F79C3FF4-2089-4F4D-AFFA-6FE669BF9CCB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElectronicNoteBook.Test", "ElectronicNoteBook.Test\ElectronicNoteBook.Test.csproj", "{ADA1053D-041C-4DB2-909D-202ACC4E78D6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F79C3FF4-2089-4F4D-AFFA-6FE669BF9CCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F79C3FF4-2089-4F4D-AFFA-6FE669BF9CCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F79C3FF4-2089-4F4D-AFFA-6FE669BF9CCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F79C3FF4-2089-4F4D-AFFA-6FE669BF9CCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADA1053D-041C-4DB2-909D-202ACC4E78D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADA1053D-041C-4DB2-909D-202ACC4E78D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADA1053D-041C-4DB2-909D-202ACC4E78D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADA1053D-041C-4DB2-909D-202ACC4E78D6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ECB597BF-D651-441F-AA7C-E1D9AB8D44ED}
+	EndGlobalSection
+EndGlobal
