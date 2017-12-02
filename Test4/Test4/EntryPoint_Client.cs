@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Test4
 {
-  class EntryPoint
+  class EntryPoint_Client
   {
     static void Main(string[] args)
     {

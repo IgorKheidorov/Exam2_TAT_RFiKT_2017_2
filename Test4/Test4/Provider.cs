@@ -36,40 +36,60 @@
       this.downloadNotebookFromFile = downloadNotebookFromFile;
     }
 
+    /// <summary>
+    /// Calls method Execute() for comand createNewNoteBook.
+    /// </summary>
     public void CreateNewNoteBookRecord()
     {
       createNewNoteBook.Execute();
     }
 
+    /// <summary>
+    /// Calls method Execute() for comand addNoteInNoteBook.
+    /// </summary>
     public void AddNoteInNoteBookRecord()
     {
       addNoteInNoteBook.Execute();
     }
 
+    /// <summary>
+    /// Calls method Execute() for comand findNotesInNotebookByContent.
+    /// </summary>
     public void FindNotesInNotebookByContentRecord()
     {
       findNotesInNotebookByContent.Execute();
     }
 
+    /// <summary>
+    /// Calls method Execute() for comand findNotesInNotebookByDateCreation.
+    /// </summary>
     public void FindNotesInNotebookByDateCreationRecord()
     {
       findNotesInNotebookByDateCreation.Execute();
     }
 
+    /// <summary>
+    /// Calls method Execute() for comand showNotesInNotebook.
+    /// </summary>
     public void ShowNotesInNotebookRecord()
     {
       showNotesInNotebook.Execute();
     }
 
+    /// <summary>
+    /// Calls method Execute() for comand writeNotebookInFile.
+    /// </summary>
     public void WriteNotebookInFileRecord()
     {
       writeNotebookInFile.Execute();
     }
 
+    /// <summary>
+    /// Calls method Execute() for comand downloadNotebookFromFile.
+    /// </summary>
     public void DownloadNotebookFromFileRecord()
     {
       downloadNotebookFromFile.Execute();
     }
-
   }
 }

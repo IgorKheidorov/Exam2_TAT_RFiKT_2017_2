@@ -49,7 +49,7 @@
     <Compile Include="FindNotesInNotebookByContent.cs" />
     <Compile Include="FindNotesInNotebookByDateCreation.cs" />
     <Compile Include="NoteBook.cs" />
-    <Compile Include="EntryPoint.cs" />
+    <Compile Include="EntryPoint_Client.cs" />
     <Compile Include="Note.cs" />
     <Compile Include="NoteBookConsoleView.cs" />
     <Compile Include="NoteBookProvider.cs" />
