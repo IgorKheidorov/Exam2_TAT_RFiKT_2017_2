@@ -5,7 +5,7 @@
   /// </summary>
   public class WriteNotebookInFile : Command
   {
-    NoteBook noteBook;
+    private NoteBook noteBook;
 
     /// <summary>
     /// This constructor determines field of class.

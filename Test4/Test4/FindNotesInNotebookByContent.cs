@@ -5,7 +5,7 @@
   /// </summary>
   public class FindNotesInNotebookByContent : Command
   {
-    NoteBook noteBook;
+    private NoteBook noteBook;
 
     /// <summary>
     /// This constructor determines field of class.

@@ -5,7 +5,7 @@
   /// </summary>
   public class DownloadNotebookFromFile : Command
   {
-    NoteBook noteBook;
+    private NoteBook noteBook;
 
     /// <summary>
     /// This constructor determines field of class.
