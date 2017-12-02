@@ -5,7 +5,7 @@ namespace Notepad.CommandExceptions
   /// <summary>
   /// 
   /// </summary>
-  class CommandTypeException: Exception
+  public class CommandTypeException: Exception
   {
     /// <summary>
     /// 
