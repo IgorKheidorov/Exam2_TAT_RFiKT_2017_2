@@ -8,12 +8,12 @@ namespace ElectronicNoteBook
   public class ConcreteCommand : Command
   {
     Receiver receiver;
-    object[] parametrs;
+    public object[] Parametrs { get; }
 
     public ConcreteCommand(params object[] parametrs)
     {
-      this.parametrs = new object[parametrs.Length];
-      Array.Copy(parametrs, this.parametrs, parametrs.Length);
+      this.Parametrs = new object[parametrs.Length];
+      Array.Copy(parametrs, this.Parametrs, parametrs.Length);
       receiver = new Receiver();
     }
 
@@ -22,7 +22,7 @@ namespace ElectronicNoteBook
     /// </summary>
     public override void Execute()
     {
-      receiver.SwitchOperation(parametrs);
+      receiver.SwitchOperation(Parametrs);
     }
   }
 }

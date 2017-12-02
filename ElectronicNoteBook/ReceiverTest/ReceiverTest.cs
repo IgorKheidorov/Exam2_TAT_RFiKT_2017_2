@@ -50,6 +50,7 @@ namespace ReceiverTest
    
       ConcreteCommand findNotes = new ConcreteCommand(notebook, dateTimeUser, listOfNotes);
       findNotes.Execute();
+      listOfNotes = (List<Note>)findNotes.Parametrs[2];
       CollectionAssert.AreEqual(expected, listOfNotes);
     }
   }
