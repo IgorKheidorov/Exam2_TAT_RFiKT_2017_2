@@ -47,7 +47,16 @@ namespace Notepad.Tests
       Assert.AreEqual(noteBooks[count-1].Id, lastId);
     }
 
-    [Test, TestCaseSource("sourceNotes")]
+    public void CreateNoteBooksDateAreNotEqual()
+    {
+      string name = "name";
+      NoteBook noteBook1 = new NoteBook(name);
+      NoteBook noteBook2 = new NoteBook(name);
+
+      Assert.AreNotEqual(noteBook1.Date, noteBook2.Date);
+    }
+
+    [Test, TestCaseSource("sourceNote")]
     public void AddInNoteBooksSameNotesAreEqual(string noteTitle, string noteContent)
     {
       string name = "name";
