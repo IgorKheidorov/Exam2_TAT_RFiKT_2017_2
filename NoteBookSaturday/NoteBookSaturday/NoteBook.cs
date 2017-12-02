@@ -220,10 +220,27 @@ namespace NoteBookSaturday
             return false;
         }
 
-
-        public string ToString()
+        /// <summary>
+        /// Returns note book name if there is no records.
+        /// </summary>
+        /// <returns> Returns all notes in one string with title of note book on the top. </returns>
+        public override string ToString()
         {
+            if (notes.Count == 0)
+            {
+                return noteBookName;
+            }
 
+            string divigion = "\n-----------------------------\n";
+            StringBuilder noteToString = new StringBuilder();
+            noteToString.Append(noteBookName);
+            noteToString.Append(divigion);
+            foreach (Note note in notes)
+            {
+                noteToString.Append(note.ToString());
+                noteToString.Append(divigion);
+            }
+            return noteToString.ToString();
         }
     }
 }
