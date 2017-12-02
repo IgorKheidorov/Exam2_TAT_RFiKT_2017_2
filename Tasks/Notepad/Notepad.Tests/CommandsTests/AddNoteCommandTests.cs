@@ -6,8 +6,15 @@ namespace Notepad.Tests.CommandsTests
   [TestFixture]
   public class AddNoteCommandTests
   {
+    private static object[] sourceCreate =
+    {
+      new object[] {"title", ""},
+      new object[] {"", "content"},
+      new object[] {"title","content"},
+    };
+
     [Test]
-    public void TestMethod1()
+    public void AddNoteInNotebookAdded()
     {
     }
   }

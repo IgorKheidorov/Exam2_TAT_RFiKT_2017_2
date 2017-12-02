@@ -46,13 +46,23 @@ namespace Notepad.Tests
     }
 
     [Test, TestCaseSource("sourceCreate")]
-    public void CreateNotesWithSameTitlesAndContentAreNotEqual(string title, string content)
+    public void CreateNotesWithSameTitlesAndContentAreEqual(string title, string content)
     {
       Note note1 = new Note(title);
       note1.Content = content;
       Note note2 = new Note(title);
       note2.Content = content;
-      Assert.AreNotEqual(note1, note2);
+      Assert.AreEqual(note1, note2);
+    }
+
+    [Test, TestCaseSource("sourceCreate")]
+    public void CreateNotesWithSameTitlesAndContentDatesAreNotEqual(string title, string content)
+    {
+      Note note1 = new Note(title);
+      note1.Content = content;
+      Note note2 = new Note(title);
+      note2.Content = content;
+      Assert.AreNotEqual(note1.Date, note2.Date);
     }
   }
 }
