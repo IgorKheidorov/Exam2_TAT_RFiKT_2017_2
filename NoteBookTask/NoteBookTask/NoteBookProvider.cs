@@ -4,13 +4,16 @@ using System.Linq;
 
 namespace NoteBookTask
 {
-    //reseiver
+    /// <summary>
+    /// NoteBook provider. 
+    /// In command pattern used as an receiver.
+    /// </summary>
     public class NoteBookProvider
     {
         private NoteBook notebook;
         
         /// <summary>
-        /// Create notebook
+        /// Create notebook.
         /// </summary>
         /// <returns>
         /// created notebook
@@ -23,7 +26,7 @@ namespace NoteBookTask
         }
 
         /// <summary>
-        /// Get notebook
+        /// Get notebook.
         /// </summary>
         /// <returns>
         /// notebook
@@ -34,7 +37,7 @@ namespace NoteBookTask
         }
 
         /// <summary>
-        /// Add note
+        /// Add note.
         /// </summary>
         /// <param name="note">
         /// added note
@@ -45,13 +48,13 @@ namespace NoteBookTask
         }
 
         /// <summary>
-        /// Find note by context
+        /// Find note by context.
         /// </summary>
         /// <param name="text">
-        /// Context to searching note
+        /// context to searching note
         /// </param>
         /// <returns>
-        /// Node if finded, Null if not
+        /// node if finded, Null if not
         /// </returns>
         public Note FindNoteByContext(string text)
         {
@@ -69,13 +72,13 @@ namespace NoteBookTask
         }
 
         /// <summary>
-        /// Find note by creating data
+        /// Find note by creating data.
         /// </summary>
         /// <param name="data">
         /// creating data
         /// </param>
         /// <returns>
-        /// Node if finded, Null if not
+        /// node if finded, Null if not
         /// </returns>
         public Note FindNoteByCreatingData(DateTime data)
         {
@@ -93,7 +96,7 @@ namespace NoteBookTask
         }
 
         /// <summary>
-        /// Display full notebook
+        /// Display full notebook.
         /// </summary>
         public void DisplayNotes()
         {
@@ -105,7 +108,7 @@ namespace NoteBookTask
         }
 
         /// <summary>
-        /// Write notebook to file
+        /// Write notebook to file.
         /// </summary>
         public void WriteNoteBookToFile()
         {
@@ -116,7 +119,7 @@ namespace NoteBookTask
         }
 
         /// <summary>
-        /// Read notebook from file
+        /// Read notebook from file.
         /// </summary>
         public void ReadNoteBookFromFile()
         {

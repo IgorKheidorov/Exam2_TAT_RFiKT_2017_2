@@ -1,7 +1,7 @@
 ﻿namespace NoteBookTask
 {
     /// <summary>
-    /// Finds note by context
+    /// Finds note by context.
     /// </summary>
     public class FindNoteByContext : ICommand
     {
@@ -10,7 +10,7 @@
         public Note FindedNote { get; set; }
 
         /// <summary>
-        /// Constuctor of class
+        /// Constuctor of class.
         /// </summary>
         /// <param name="receiver">
         /// used by command pattern
@@ -25,7 +25,7 @@
         }
 
         /// <summary>
-        /// Find note by context
+        /// Find note by context.
         /// </summary>
         public void Execute()
         {

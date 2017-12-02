@@ -3,12 +3,12 @@
 namespace NoteBookTask
 {
     /// <summary>
-    /// Console viewer for notebook
+    /// Console viewer for notebook.
     /// </summary>
     public class NoteBookConsoleView
     {
         /// <summary>
-        /// Print one note
+        /// Print one note.
         /// </summary>
         /// <param name="note">
         /// note for print
@@ -19,7 +19,7 @@ namespace NoteBookTask
         }
         
         /// <summary>
-        /// Print some notes
+        /// Print some notes.
         /// </summary>
         /// <param name="note">
         /// notes
@@ -36,7 +36,7 @@ namespace NoteBookTask
         }
 
         /// <summary>
-        /// Print all notes
+        /// Print all notes.
         /// </summary>
         /// <param name="notes">
         /// full notebook

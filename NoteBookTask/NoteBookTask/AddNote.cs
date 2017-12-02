@@ -1,7 +1,7 @@
 ﻿namespace NoteBookTask
 {
     /// <summary>
-    /// Adds note
+    /// Adds note.
     /// </summary>
     public class AddNote : ICommand
     {
@@ -9,7 +9,7 @@
         public Note Note { get; set; }
 
         /// <summary>
-        /// Constuctor of class
+        /// Constuctor of class.
         /// </summary>
         /// <param name="receiver">
         /// used by command pattern
@@ -24,7 +24,7 @@
         }
 
         /// <summary>
-        /// Add note
+        /// Add note.
         /// </summary>
         public void Execute()
         {

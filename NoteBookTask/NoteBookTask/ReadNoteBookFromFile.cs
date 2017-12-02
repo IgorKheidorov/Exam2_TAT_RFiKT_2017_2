@@ -1,14 +1,14 @@
 ﻿namespace NoteBookTask
 {
     /// <summary>
-    /// Reads notebook from file
+    /// Reads notebook from file.
     /// </summary>
     class ReadNoteBookFromFile : ICommand
     {
         private NoteBookProvider receiver;
 
         /// <summary>
-        /// Constuctor of class
+        /// Constuctor of class.
         /// </summary>
         /// <param name="receiver">
         /// used by command pattern
@@ -19,14 +19,11 @@
         }
 
         /// <summary>
-        /// Read notebook from file
+        /// Read notebook from file.
         /// </summary>
         public void Execute()
         {
             receiver.ReadNoteBookFromFile();
         }
-
-        public void Undo()
-        { }
     }
 }

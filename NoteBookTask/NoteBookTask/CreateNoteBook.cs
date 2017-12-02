@@ -1,14 +1,14 @@
 ﻿namespace NoteBookTask
 {
     /// <summary>
-    /// Creates notebook
+    /// Creates notebook.
     /// </summary>
     public class CreateNoteBook : ICommand
     {
         NoteBookProvider receiver;
 
         /// <summary>
-        /// Constuctor of class
+        /// Constuctor of class.
         /// </summary>
         /// <param name="receiver">
         /// used by command pattern
@@ -19,7 +19,7 @@
         }
 
         /// <summary>
-        /// Create notebook
+        /// Create notebook.
         /// </summary>
         public void Execute()
         {

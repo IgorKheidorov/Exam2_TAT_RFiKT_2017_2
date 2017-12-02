@@ -3,7 +3,7 @@
 namespace NoteBookTask
 {
     /// <summary>
-    /// Finds note by creating data
+    /// Finds note by creating data.
     /// </summary>
     public class FindNoteByCreatingData : ICommand
     {
@@ -12,7 +12,7 @@ namespace NoteBookTask
         public Note FindedNote { get; set; }
 
         /// <summary>
-        /// Constuctor of class
+        /// Constuctor of class.
         /// </summary>
         /// <param name="receiver">
         /// used by command pattern
@@ -27,7 +27,7 @@ namespace NoteBookTask
         }
 
         /// <summary>
-        /// Find note by creating data
+        /// Find note by creating data.
         /// </summary>
         public void Execute()
         {

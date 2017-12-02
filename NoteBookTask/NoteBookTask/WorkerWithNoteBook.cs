@@ -1,17 +1,17 @@
 ﻿namespace NoteBookTask
 {
     /// <summary>
-    /// Realiced invokers work from command pattern
+    /// Realiced invokers work from command pattern.
     /// </summary>
     public class WorkerWithNoteBook
     {
         private ICommand command;
 
         /// <summary>
-        /// Set command
+        /// Set command.
         /// </summary>
         /// <param name="command">
-        /// Command for work
+        /// command for work
         /// </param>
         public void SetCommand(ICommand command)
         {
@@ -19,7 +19,7 @@
         }
 
         /// <summary>
-        /// Start working
+        /// Start working.
         /// </summary>
         public void Run()
         {

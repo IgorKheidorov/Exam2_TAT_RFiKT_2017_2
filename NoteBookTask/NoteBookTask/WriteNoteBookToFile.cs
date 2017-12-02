@@ -1,14 +1,14 @@
 ﻿namespace NoteBookTask
 {
     /// <summary>
-    /// Writes notebook to file
+    /// Writes notebook to file.
     /// </summary>
     public class WriteNoteBookToFile : ICommand
     {
         private NoteBookProvider receiver;
 
         /// <summary>
-        /// Constuctor of class
+        /// Constuctor of class.
         /// </summary>
         /// <param name="receiver">
         /// used by command pattern
@@ -19,14 +19,11 @@
         }
 
         /// <summary>
-        /// Write notebook to file
+        /// Write notebook to file.
         /// </summary>
         public void Execute()
         {
             receiver.WriteNoteBookToFile();
         }
-
-        public void Undo()
-        { }
     }
 }

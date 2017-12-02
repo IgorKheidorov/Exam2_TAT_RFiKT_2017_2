@@ -5,7 +5,7 @@ using System.Text;
 namespace NoteBookTask
 {
     /// <summary>
-    /// NoteBook class
+    /// NoteBook class.
     /// </summary>
     public class NoteBook
     {
@@ -14,7 +14,7 @@ namespace NoteBookTask
         public DateTime TimeOfNoteBookCreating { get; set; }
         
         /// <summary>
-        /// Constuctor without parameters
+        /// Constuctor without parameters.
         /// </summary>
         public NoteBook()
         {
@@ -24,10 +24,10 @@ namespace NoteBookTask
         }
 
         /// <summary>
-        /// Constuctor with name
+        /// Constuctor with name.
         /// </summary>
         /// <param name="name">
-        /// Notebook name
+        /// notebook name
         /// </param>
         public NoteBook(string name)
         {
@@ -37,10 +37,10 @@ namespace NoteBookTask
         }
 
         /// <summary>
-        /// Compares two notebooks
+        /// Compares two notebooks.
         /// </summary>
         /// <param name="obj">
-        /// Redused to NoteBook type
+        /// redused to NoteBook type
         /// </param>
         /// <returns>
         /// true if equals or false if not
@@ -66,7 +66,7 @@ namespace NoteBookTask
         }
         
         /// <summary>
-        /// Get hash code
+        /// Get hash code.
         /// </summary>
         /// <returns>
         /// hash code
@@ -77,7 +77,7 @@ namespace NoteBookTask
         }
 
         /// <summary>
-        /// convert notebook to string
+        /// Convert notebook to string.
         /// </summary>
         /// <returns>
         /// notebook in string format
