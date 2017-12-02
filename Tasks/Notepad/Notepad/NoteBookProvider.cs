@@ -1,18 +1,18 @@
-﻿
-using Notepad.Commands;
+﻿using Notepad.Commands;
 
 namespace Notepad
 {
   /// <summary>
-  /// 
+  /// Class contains notebook
+  /// over which he executes commands
   /// </summary>
   public class NoteBookProvider
   {
     public NoteBook NoteBook { get; set; }
-    public ICommand Command { get; set; }
+    public Command Command { get; set; }
 
     /// <summary>
-    /// 
+    /// Set current notebook
     /// </summary>
     /// <param name="noteBook"></param>
     public NoteBookProvider(NoteBook noteBook)
@@ -21,7 +21,7 @@ namespace Notepad
     }
 
     /// <summary>
-    /// 
+    /// Execute current command
     /// </summary>
     public void RunCommand()
     {

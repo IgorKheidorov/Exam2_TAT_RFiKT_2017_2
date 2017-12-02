@@ -4,14 +4,12 @@ using Notepad.CommandExceptions;
 namespace Notepad.Commands
 {
   /// <summary>
-  /// 
+  /// Command Add Note in NoteBook
   /// </summary>
-  public class AddNoteCommand : ICommand
+  public class AddNoteCommand : Command
   {
-    private string name = "add note";
-    private NoteBookProvider currentNoteBookProvider;
-    private string args;
-    private Regex regex = new Regex(@"add note {\w+}");
+    private static string name = "add note";
+    private readonly Regex regex = new Regex(@"add note (\w+)");
 
     /// <summary>
     /// Set args of command from paramether args
@@ -25,25 +23,18 @@ namespace Notepad.Commands
       {
         throw new CommandTypeException();
       }
-      this.args = regex.Match(args).Value;
-      currentNoteBookProvider = provider;
+      Name = name;
+      Args = regex.Match(args).Value;
+      NoteBookProvider = provider;
     }
 
     /// <summary>
-    /// Set providers notebook new notebook with name in field args
+    /// Add in providers notebook new note with title from field args
     /// </summary>
-    public void Execute()
+    public override void Execute()
     {
-      currentNoteBookProvider.NoteBook = new NoteBook(args);
+      NoteBookProvider.NoteBook.Notes.Add(new Note(Args));
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <returns></returns>
-    public string Name()
-    {
-      return name;
-    }
   }
 }
