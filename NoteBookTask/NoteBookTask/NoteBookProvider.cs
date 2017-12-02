@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NoteBookTask
 {
@@ -11,7 +8,13 @@ namespace NoteBookTask
     public class NoteBookProvider
     {
         private static NoteBook notebook;
-
+        
+        /// <summary>
+        /// Create notebook
+        /// </summary>
+        /// <returns>
+        /// created notebook
+        /// </returns>
         public NoteBook CreateNoteBook()
         {
             notebook = new NoteBook();
@@ -19,11 +22,26 @@ namespace NoteBookTask
             return notebook;
         }
 
+        /// <summary>
+        /// Add note
+        /// </summary>
+        /// <param name="note">
+        /// added note
+        /// </param>
         public void AddNote(Note note)
         {
             notebook.Notes.Add(note);
         }
 
+        /// <summary>
+        /// Find note by context
+        /// </summary>
+        /// <param name="text">
+        /// Context to searching note
+        /// </param>
+        /// <returns>
+        /// Node if finded, Null if not
+        /// </returns>
         public Note FindNoteByContext(string text)
         {
             Note findNote = null;
@@ -39,6 +57,15 @@ namespace NoteBookTask
             return findNote;
         }
 
+        /// <summary>
+        /// Find note by creating data
+        /// </summary>
+        /// <param name="data">
+        /// creating data
+        /// </param>
+        /// <returns>
+        /// Node if finded, Null if not
+        /// </returns>
         public Note FindNoteByCreatingData(DateTime data)
         {
             Note findNote = null;
@@ -54,6 +81,9 @@ namespace NoteBookTask
             return findNote;
         }
 
+        /// <summary>
+        /// Display full notebook
+        /// </summary>
         public void DisplayNotes()
         {
             Console.WriteLine(notebook.NoteBookName);
@@ -63,6 +93,9 @@ namespace NoteBookTask
             display.Print(notebook);
         }
 
+        /// <summary>
+        /// Write notebook to file
+        /// </summary>
         public void WriteNoteBookToFile()
         {
             using (StreamWriter writerToFile = new StreamWriter("Notebook.txt"))
@@ -71,6 +104,9 @@ namespace NoteBookTask
             }
         }
 
+        /// <summary>
+        /// Read notebook from file
+        /// </summary>
         public void ReadNoteBookFromFile()
         {
             using (StreamReader reader = new StreamReader("Notebook.txt"))
@@ -97,7 +133,7 @@ namespace NoteBookTask
                 }
             }
         }
-
+        
         private void ReadNote(string line, int count)
         {
             count %= 3;

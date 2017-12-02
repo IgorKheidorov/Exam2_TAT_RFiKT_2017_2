@@ -2,6 +2,9 @@
 
 namespace NoteBookTask
 {
+    /// <summary>
+    /// Used only as an entry point
+    /// </summary>
     class EntryPoint
     {
         static void Main(string[] args)
@@ -26,4 +29,3 @@ namespace NoteBookTask
         }
     }
 }
- 
