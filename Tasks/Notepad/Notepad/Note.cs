@@ -15,7 +15,7 @@ namespace Notepad
     public DateTime Date { get; }
     public string Title { get; set; }
     public string Content { get; set; }
-   
+
     /// <summary>
     /// Create new Note with definited title
     /// Set current time in field Date
@@ -30,14 +30,16 @@ namespace Notepad
 
     /// <summary>
     /// Overrided equals method
-    /// Check all fields in nodes
+    /// Check title and content fields in notes
     /// </summary>
     /// <param name="obj">checked on equality node</param>
     /// <returns>true all fields are equals, false otherwise</returns>
     public override bool Equals(object obj)
     {
       if (obj == null || GetType() != obj.GetType())
+      {
         return false;
+      }
 
       Note note = (Note)obj;
       return (Title == note.Title) && (Content == note.Content);

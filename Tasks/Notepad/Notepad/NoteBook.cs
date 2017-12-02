@@ -35,17 +35,19 @@ namespace Notepad
 
     /// <summary>
     /// Overrided equals method
-    /// Check all fields in nodes
+    /// Check name and list notes fields in notebooks
     /// </summary>
     /// <param name="obj">checked on equality node</param>
     /// <returns>true all fields are equals, false otherwise</returns>
     public override bool Equals(object obj)
     {
       if (obj == null || GetType() != obj.GetType())
+      {
         return false;
+      }
 
       NoteBook note = (NoteBook)obj;
-      return (Name == note.Name) && (Notes != note.Notes);
+      return (Name == note.Name) && (Notes == note.Notes);
     }
 
     /// <summary>
