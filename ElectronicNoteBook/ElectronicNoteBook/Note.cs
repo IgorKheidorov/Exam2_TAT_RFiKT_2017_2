@@ -11,11 +11,20 @@ namespace ElectronicNoteBook
     public DateTime DateOfCreation { get; set; }
     public StringBuilder Notation { get; set; }
 
+    /// <summary>
+    /// Default constructor
+    /// </summary>
     public Note ()
     {
       DateOfCreation = DateTime.Now;
       Notation = new StringBuilder(String.Empty);
     }
+
+    /// <summary>
+    /// Constructor with parameters
+    /// </summary>
+    /// <param name="dateTimeOfCreation">date and time of creation</param>
+    /// <param name="data">data of note</param>
     public Note(DateTime dateTimeOfCreation, StringBuilder data)
     {
       DateOfCreation = dateTimeOfCreation;

@@ -13,11 +13,20 @@ namespace ElectronicNoteBook
     public DateTime DateOfCreation { get; set; }
     public int Id { get; set; }
 
+    /// <summary>
+    /// Default constructor
+    /// </summary>
     public NoteBook()
     {
       Id = 0;
       Notations = new List<Note>();
     }
+
+    /// <summary>
+    /// Consrtuctor with parameters
+    /// </summary>
+    /// <param name="idOfNoteBook"> id number of notebook</param>
+    /// <param name="dateTimeOfcreation">date and time of creation</param>
     public NoteBook (int idOfNoteBook, DateTime dateTimeOfcreation)
     {
       DateOfCreation = dateTimeOfcreation;
