@@ -1,6 +1,7 @@
 package SkuratovichSiarhey.by.ComandPattern.Comands;
 import SkuratovichSiarhey.by.ComandPattern.Command;
 import SkuratovichSiarhey.by.NoteBook;
+import SkuratovichSiarhey.by.NoteBookConsoleView;
 import SkuratovichSiarhey.by.NoteBookProvider;
 
 /**
@@ -17,7 +18,7 @@ public class WriteFoundNoteByContentCommand implements Command{
   }
 
   public void execute() {
-    NoteBookProvider noteBookProvider = new NoteBookProvider();
-    noteBookProvider.print(noteBook.findByContent(content));
+    /*NoteBookConsoleView noteBookConsoleView = new NoteBookConsoleView(noteBook);
+    noteBookConsoleView.print(noteBook.findByContent(content));*/
   }
 }

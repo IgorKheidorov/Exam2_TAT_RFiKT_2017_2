@@ -1,22 +1,24 @@
 package SkuratovichSiarhey.by.ComandPattern.Comands;
 
+import SkuratovichSiarhey.by.ComandPattern.Command;
 import SkuratovichSiarhey.by.NoteBook;
+import SkuratovichSiarhey.by.NoteBookConsoleView;
 import SkuratovichSiarhey.by.NoteBookProvider;
 
 /**
  * Created by siarhey on 02.12.17.
  */
-public class WriteFoundNoteByDateCommand {
+public class WriteFoundNoteByDateCommand implements Command {
   private NoteBook noteBook;
-  private String content;
+  private String date;
 
-  public WriteFoundNoteByDateCommand(NoteBook noteBook, String content) {
+  public WriteFoundNoteByDateCommand(NoteBook noteBook, String date) {
     this.noteBook = noteBook;
-    this.content = content;
+    this.date = date;
   }
 
   public void execute() {
-    NoteBookProvider noteBookProvider = new NoteBookProvider();
-    noteBookProvider.print(noteBook.findByDate(content));
+    /*NoteBookConsoleView noteBookConsoleView = new NoteBookConsoleView();
+    noteBookConsoleView.print(noteBook.findByDate(date));;*/
   }
 }
