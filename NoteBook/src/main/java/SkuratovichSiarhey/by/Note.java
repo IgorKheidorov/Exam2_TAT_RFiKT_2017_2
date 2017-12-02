@@ -22,6 +22,10 @@ public class Note {
     this.head = head;
   }
 
+  public void setDate(String date) {
+    this.date = date;
+  }
+
   public String getContent() {
     return content;
   }

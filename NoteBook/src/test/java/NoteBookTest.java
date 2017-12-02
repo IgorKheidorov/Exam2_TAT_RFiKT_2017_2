@@ -61,4 +61,27 @@ public class NoteBookTest {
             "second note\n" +
             "something bad", noteBook.findByDate("something bad"));
   }
+
+  @org.junit.Test
+  public void checkGetFullList() throws Exception {
+    NoteBook noteBook = new NoteBook("My SkuratovichSiarhey.by.NoteBook");
+    Note note1 = new Note("first note", "something good");
+    noteBook.addNote(note1);
+    Note note2 = new Note("second note", "something bad");
+    noteBook.addNote(note2);
+    Note note3 = new Note("third note", "something so-so");
+    noteBook.addNote(note3);
+    assertEquals("1)\n" +
+            "first note\n" +
+            "something good\n" +
+            note1.getDate() + "\n" +
+            "2)\n" +
+            "second note\n" +
+            "something bad\n" +
+            note2.getDate() + "\n" +
+            "3)\n" +
+            "third note\n" +
+            "something so-so\n" +
+            note1.getDate(), noteBook.getFullList());
+  }
 }

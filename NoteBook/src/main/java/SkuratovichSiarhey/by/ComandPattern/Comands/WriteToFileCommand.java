@@ -32,8 +32,10 @@ public class WriteToFileCommand implements Command {
       writer.write(noteBook.getName());
       StringBuffer fullList = new StringBuffer();
       writer.write(noteBook.getFullList());
+      writer.flush();
+      writer.close();
     } catch (IOException ex) {
-      log.log(Level.SEVERE, "IOException", ex);
+      log.log(Level.SEVERE, "IOException while writing", ex);
     }
 
   }
