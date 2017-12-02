@@ -6,10 +6,15 @@ using System.Threading.Tasks;
 
 namespace ElectronicNoteBook
 {
-  class Program
+  class EntryPoint
   {
+    /// <summary>
+    /// The program starts here
+    /// </summary>
+    /// <param name="args">Parameters of command line. The are not nessessary here</param>
     static void Main(string[] args)
     {
+      
     }
   }
 }

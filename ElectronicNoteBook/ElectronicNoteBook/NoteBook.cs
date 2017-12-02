@@ -13,6 +13,12 @@ namespace ElectronicNoteBook
     public DateTime DateOfCreation { get; set; }
     public int Id { get; set; }
 
+    public NoteBook (int idOfNoteBook, DateTime dateTimeOfcreation)
+    {
+      DateOfCreation = dateTimeOfcreation;
+      Id = idOfNoteBook;
+    }
+
     public override bool Equals(object obj)
     {
       if (obj == null || GetType() != obj.GetType())

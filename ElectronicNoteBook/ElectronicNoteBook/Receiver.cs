@@ -85,7 +85,7 @@ namespace ElectronicNoteBook
     /// <param name="noteBook">notebook to create</param>
     public void CreateNewNoteBook(NoteBook noteBook)
     {
-      noteBook = new NoteBook();
+      noteBook = new NoteBook(0, DateTime.Now);
     }
 
     /// <summary>

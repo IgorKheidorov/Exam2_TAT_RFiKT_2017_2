@@ -8,9 +8,19 @@ namespace ElectronicNoteBook
   /// </summary>
   public class Note
   {
-    public string Title { get; set; }
     public DateTime DateOfCreation { get; set; }
     public StringBuilder Notation { get; set; }
+
+    public Note ()
+    {
+      DateOfCreation = DateTime.Now;
+      Notation = new StringBuilder(String.Empty);
+    }
+    public Note(DateTime dateTimeOfCreation, StringBuilder data)
+    {
+      DateOfCreation = dateTimeOfCreation;
+      Notation = data;
+    }
 
     public override bool Equals(object obj)
     {
@@ -19,7 +29,7 @@ namespace ElectronicNoteBook
         return false;
       }
       Note note = (Note)obj;
-      return (Title == note.Title) && (DateOfCreation.Equals(note.DateOfCreation)) && (Notation.Equals(note.Notation));
+      return (DateOfCreation.Equals(note.DateOfCreation)) && (Notation.Equals(note.Notation));
     }
 
     public override int GetHashCode()
@@ -29,7 +39,7 @@ namespace ElectronicNoteBook
 
     public override string ToString()
     {
-      StringBuilder output = new StringBuilder("Title: " + Title + "\n Date and time of creation: " + DateOfCreation.ToString() + "\n");
+      StringBuilder output = new StringBuilder("Date and time of creation: " + DateOfCreation.ToString() + "\n");
       output.Append(Notation);
       return output.ToString();
     }
