@@ -2,11 +2,13 @@
 
 namespace Notebook
 {
-  class Program
+  /// <summary>
+  /// Point where programm starts.
+  /// </summary>
+  class EntryPoint
   {
     static void Main(string[] args)
     {
-
       Note note = new Note("here's a text", "example");
       NoteBook noteBook = new NoteBook();
       NoteBookProvider provider = new NoteBookProvider();

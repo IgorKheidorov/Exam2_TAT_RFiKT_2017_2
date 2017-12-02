@@ -2,6 +2,9 @@
 
 namespace Notebook
 {
+  /// <summary>
+  /// The substance to work with note book, also needed to implement command pattern.
+  /// </summary>
   class NoteBookProvider
   {
     Command command;
