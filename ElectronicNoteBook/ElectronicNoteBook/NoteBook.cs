@@ -13,10 +13,16 @@ namespace ElectronicNoteBook
     public DateTime DateOfCreation { get; set; }
     public int Id { get; set; }
 
+    public NoteBook()
+    {
+      Id = 0;
+      Notations = new List<Note>();
+    }
     public NoteBook (int idOfNoteBook, DateTime dateTimeOfcreation)
     {
       DateOfCreation = dateTimeOfcreation;
       Id = idOfNoteBook;
+      Notations = new List<Note>();
     }
 
     public override bool Equals(object obj)

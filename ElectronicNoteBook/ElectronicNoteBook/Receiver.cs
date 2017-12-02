@@ -85,14 +85,14 @@ namespace ElectronicNoteBook
     /// <param name="noteBook">notebook to create</param>
     public void CreateNewNoteBook(NoteBook noteBook)
     {
-      noteBook = new NoteBook(0, DateTime.Now);
+      noteBook = new NoteBook();
     }
 
     /// <summary>
     /// Adds new note to notebook
     /// </summary>
     /// <param name="noteBook">notbook to which note should be added</param>
-    /// <param name="noteToAdd"></param>
+    /// <param name="noteToAdd">Note to add</param>
     public void AddNoteToNoteBook(NoteBook noteBook, Note noteToAdd)
     {
       noteBook.Notations.Add(noteToAdd);
