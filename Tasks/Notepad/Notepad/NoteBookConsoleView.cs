@@ -35,16 +35,16 @@ namespace Notepad
     /// Print some notes in notebook
     /// Throws if needed count of notes is invalid
     /// </summary>
-    /// <param name="count">Count of printed notes</param>
-    public void Print(int count)
+    /// <param name="noteNumbers">Numbers of printed notes</param>
+    public void Print(params int[] noteNumbers)
     {
-      if (count <= 0 || count > NoteBook.Notes.Count)
+      if (noteNumbers.Length <= 0 || noteNumbers.Length > NoteBook.Notes.Count)
       {
         throw new InvalidOperationException();
       }
-      for (int i = 0; i < count; i++)
+      for (int i = 0; i < noteNumbers.Length; i++)
       {
-        Console.WriteLine(NoteBook.Notes[i].ToString());
+        Console.WriteLine(NoteBook.Notes[noteNumbers[i]].ToString());
       }
     }
   }
