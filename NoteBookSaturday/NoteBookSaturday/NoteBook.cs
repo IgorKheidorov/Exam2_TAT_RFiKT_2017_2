@@ -14,6 +14,7 @@ namespace NoteBookSaturday
         private string noteBookName { get; set; }
         private List<Note> notes;
         private int count { get; set; }
+        private int currentPosition { get; set; }
 
         /// <summary>
         /// Create new noteBook.
@@ -44,6 +45,61 @@ namespace NoteBookSaturday
                 note.title = title;
             }
             notes.Add(note);
+        }
+
+        /// <summary>
+        /// Returns null if list empty.
+        /// </summary>
+        /// <returns> Returns note on current position </returns>
+        public Note GetCurrentNote()
+        {
+            if (notes.Count == 0)
+            {
+                return null;
+            }
+            return notes.ElementAt(currentPosition);
+        }
+
+        /// <summary>
+        /// Set current position to start of notebook.
+        /// </summary>
+        /// <returns> Returns false if impossible to move start note. </returns>
+        public bool MoveStart()
+        {
+            if (notes.Count == 0)
+            {
+                return false;
+            }
+            currentPosition = 0;
+            return true;
+        }
+
+        /// <summary>
+        /// Move current position to next note.
+        /// </summary>
+        /// <returns> Returns false if impossible to move next note. </returns>
+        public bool MoveNext()
+        {
+            if (notes.Count == 0 || currentPosition == notes.Count - 1)
+            {
+                return false;
+            }
+            currentPosition++;
+            return true;
+        }
+
+        /// <summary>
+        /// Move current position to previouse note.
+        /// </summary>
+        /// <returns> Returns false if impossible to move previouse note. </returns>
+        public bool MoveBack()
+        {
+            if (notes.Count == 0 || currentPosition == 0)
+            {
+                return false;
+            }
+            currentPosition--;
+            return true;
         }
 
         /// <summary>

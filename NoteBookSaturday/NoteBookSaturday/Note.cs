@@ -38,7 +38,7 @@ namespace NoteBookSaturday
         /// 
         /// </summary>
         /// <returns> Title,  </returns>
-        public string ToStrng()
+        public override string ToString()
         {
             return title == String.Empty ? (record == String.Empty ? null : record) : (title + (record == String.Empty ? null : "\n" + record));
         }
