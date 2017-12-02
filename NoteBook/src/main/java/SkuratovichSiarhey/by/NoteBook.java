@@ -89,20 +89,4 @@ public class NoteBook {
     }
     return fullList.toString();
   }
-
-  /**
-   * Writes SkuratovichSiarhey.by.NoteBook object to File
-   */
-  public void writeToFile() {
-
-  }
-
-  /**
-   * Reads File to SkuratovichSiarhey.by.NoteBook object.
-   */
-  public void download() {
-
-  }
-
-
 }

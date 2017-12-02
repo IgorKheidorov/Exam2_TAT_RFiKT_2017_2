@@ -2,6 +2,10 @@ package SkuratovichSiarhey.by;
 
 import java.util.Date;
 
+/**
+ * A note of NoteBook.
+ * Contains a head, content and date of creaton
+ */
 public class Note {
   private String head;
   private String content;

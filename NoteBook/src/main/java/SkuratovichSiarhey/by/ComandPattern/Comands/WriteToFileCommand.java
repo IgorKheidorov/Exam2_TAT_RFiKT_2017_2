@@ -9,7 +9,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Created by siarhey on 02.12.17.
+ * Implements users command of writing NoteBook to File.
  */
 public class WriteToFileCommand implements Command {
 
@@ -23,7 +23,7 @@ public class WriteToFileCommand implements Command {
   }
 
   /**
-   * Writes notes to
+   * Writes notes to file.
    */
   public void execute() {
     try {

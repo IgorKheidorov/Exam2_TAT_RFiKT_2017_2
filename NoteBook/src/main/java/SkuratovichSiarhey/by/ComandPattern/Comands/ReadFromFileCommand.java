@@ -11,7 +11,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Created by siarhey on 02.12.17.
+ * Implements users command of reading notes to NoteBook object.
  */
 public class ReadFromFileCommand {
 

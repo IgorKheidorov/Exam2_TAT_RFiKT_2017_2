@@ -3,7 +3,8 @@ package SkuratovichSiarhey.by;
 import SkuratovichSiarhey.by.ComandPattern.Command;
 
 /**
- * Created by siarhey on 02.12.17.
+ * An user of NoteBook.
+ * Can implements specified commands.
  */
 public class NoteBookProvider {
   Command showNotesCommand;
@@ -16,14 +17,23 @@ public class NoteBookProvider {
     this.writeFoundNoteByDateCommand = writeFoundNoteByDateCommand;
   }
 
+  /**
+   * Writes found notes by content in NoteBook.
+   */
   void writeFoundNoteByContentCommand() {
     writeFoundNoteByContentCommand.execute();
   }
 
+  /**
+   * Writes found notes by date in NoteBook.
+   */
   void writeFoundNoteByDateCommand() {
     writeFoundNoteByDateCommand.execute();
   }
 
+  /**
+   * Shows full list of notes.
+   */
   void showNotesCommand() {
     showNotesCommand.execute();
   }
