@@ -7,6 +7,7 @@
     {
         private NoteBookProvider receiver;
         public string Text { get; set; }
+        public Note FindedNote { get; set; }
 
         /// <summary>
         /// Constuctor of class
@@ -28,7 +29,7 @@
         /// </summary>
         public void Execute()
         {
-            receiver.FindNoteByContext(Text);
+            FindedNote = receiver.FindNoteByContext(Text);
         }
     }
 }

@@ -19,7 +19,7 @@ namespace NoteBookTask
         public NoteBook()
         {
             Notes = new List<Note>();
-            NoteBookName = "";
+            NoteBookName = "No Name";
             TimeOfNoteBookCreating = DateTime.UtcNow;
         }
 
@@ -58,9 +58,9 @@ namespace NoteBookTask
             {
                 areEquals = false;
             }
-            areEquals = book.TimeOfNoteBookCreating == this.TimeOfNoteBookCreating 
+            areEquals = book.TimeOfNoteBookCreating == this.TimeOfNoteBookCreating
                         && book.NoteBookName == this.NoteBookName
-                        && book.Notes == book.Notes;
+                        && book.Notes.Equals(this.Notes);
 
             return areEquals;
         }

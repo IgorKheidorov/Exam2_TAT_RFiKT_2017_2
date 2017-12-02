@@ -25,13 +25,5 @@
         {
             command.Execute();
         }
-
-        /// <summary>
-        /// undo working
-        /// </summary>
-        public void Cancel()
-        {
-            command.Undo();
-        }
     }
 }

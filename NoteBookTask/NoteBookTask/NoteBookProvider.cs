@@ -7,7 +7,7 @@ namespace NoteBookTask
     //reseiver
     public class NoteBookProvider
     {
-        private static NoteBook notebook;
+        private NoteBook notebook;
         
         /// <summary>
         /// Create notebook
@@ -19,6 +19,17 @@ namespace NoteBookTask
         {
             notebook = new NoteBook();
 
+            return notebook;
+        }
+
+        /// <summary>
+        /// Get notebook
+        /// </summary>
+        /// <returns>
+        /// notebook
+        /// </returns>
+        public NoteBook GetNoteBook()
+        {
             return notebook;
         }
 

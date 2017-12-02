@@ -5,10 +5,11 @@ namespace NoteBookTask
     /// <summary>
     /// Finds note by creating data
     /// </summary>
-    class FindNoteByCreatingData : ICommand
+    public class FindNoteByCreatingData : ICommand
     {
         private NoteBookProvider receiver;
         public DateTime Data { get; set; }
+        public Note FindedNote { get; set; }
 
         /// <summary>
         /// Constuctor of class
@@ -30,7 +31,7 @@ namespace NoteBookTask
         /// </summary>
         public void Execute()
         {
-            receiver.FindNoteByCreatingData(Data);
+            FindedNote = receiver.FindNoteByCreatingData(Data);
         }
     }
 }
