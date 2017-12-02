@@ -25,7 +25,7 @@ namespace ElectronicNoteBook
 
     public override int GetHashCode()
     {
-      return base.GetHashCode();
+      return DateOfCreation.Second * DateOfCreation.Minute * Id;
     }
 
     public override string ToString()
