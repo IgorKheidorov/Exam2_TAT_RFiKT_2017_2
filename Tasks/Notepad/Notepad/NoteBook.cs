@@ -1,33 +1,34 @@
-﻿
-using System;
+﻿using System;
+using System.Collections.Generic;
 using System.Text;
 
 namespace Notepad
 {
   /// <summary>
-  /// The essence of an entry in a notebook
-  /// Contains unique id,
-  /// date time of creating,
-  /// title and content
+  /// Class describes essense of notebook
+  /// with list of notes.
+  /// Contains unique id and
+  /// date time of creating
   /// </summary>
-  public class Note
+  public class NoteBook
   {
     private static int id;
 
-    public int Id { get; }
+    public string Name { get; set; }
+    public List<Note> Notes { get; set; }
     public DateTime Date { get; }
-    public string Title { get; set; }
-    public string Content { get; set; }
-   
+    public int Id { get; }
+
     /// <summary>
-    /// Create new Note with definited title
-    /// Set current time in field Date
-    /// Set Id
+    /// Set field Name like input param
+    /// Set current time in field date
+    /// Set to notebook id
     /// </summary>
-    /// <param name="title"></param>
-    public Note(string title)
+    /// <param name="name">new notebooks name</param>
+    public NoteBook(string name)
     {
-      Title = title;
+      Name = name;
+      Notes = new List<Note>();
       Date = DateTime.Now;
       Id = id++;
     }
@@ -43,8 +44,8 @@ namespace Notepad
       if (obj == null || GetType() != obj.GetType())
         return false;
 
-      Note note = (Note)obj;
-      return (Date == note.Date) && (Title == note.Title) && (Content == note.Content);
+      NoteBook note = (NoteBook)obj;
+      return (Date == note.Date) && (Notes != note.Notes);
     }
 
     /// <summary>
@@ -65,7 +66,7 @@ namespace Notepad
     public override string ToString()
     {
       StringBuilder sb = new StringBuilder(Id).AppendLine();
-      return sb.AppendLine(Title).AppendLine(Date.ToLongDateString()).AppendLine(Content).ToString();
+      return sb.ToString();
     }
   }
 }

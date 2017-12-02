@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Notepad.Commands
+namespace Notepad.CommandBuilders
 {
-  class AddNodeCommand
+  class CreateCommandBuilder
   {
   }
 }

@@ -1,12 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using Notepad.Commands;
 
 namespace Notepad
 {
-  class NoteBookProvider
+  /// <summary>
+  /// 
+  /// </summary>
+  public class NoteBookProvider
   {
+    public NoteBook NoteBook { get; set; }
+    public ICommand Command { get; set; }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="noteBook"></param>
+    public NoteBookProvider(NoteBook noteBook)
+    {
+      NoteBook = noteBook;
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    public void RunCommand()
+    {
+      Command.Execute();
+    }
   }
 }
