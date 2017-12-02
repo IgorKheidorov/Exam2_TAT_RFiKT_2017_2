@@ -40,7 +40,7 @@ namespace Notepad
         return false;
 
       Note note = (Note)obj;
-      return (Date == note.Date) && (Title == note.Title) && (Content == note.Content);
+      return (Title == note.Title) && (Content == note.Content);
     }
 
     /// <summary>
