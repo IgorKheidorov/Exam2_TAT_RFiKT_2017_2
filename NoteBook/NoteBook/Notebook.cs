@@ -29,6 +29,22 @@ namespace Notebook
       Notes.Add(new Note(value, title));
     }
     /// <summary>
+    /// Adds note to this note book.
+    /// </summary>
+    /// <param name="value">
+    /// Value of note.
+    /// </param>
+    /// <param name="title">
+    /// Title of note.
+    /// </param>
+    /// <param name="time">
+    /// Time of creation of note.
+    /// </param>
+    public void AddNote(string value, string title,DateTime time )
+    {
+      Notes.Add(new Note(value, title, time));
+    }
+    /// <summary>
     /// Searching first note with concrete value.
     /// </summary>
     /// <param name="value">

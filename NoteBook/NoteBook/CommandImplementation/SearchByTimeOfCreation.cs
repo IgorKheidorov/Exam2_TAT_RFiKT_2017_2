@@ -23,5 +23,9 @@ namespace Notebook.CommandImplementation
     {
       resultOfSearch = noteBook.SearchByTimeOfCreation(time);
     }
+    public Note GetResult()
+    {
+      return resultOfSearch;
+    }
   }
 }

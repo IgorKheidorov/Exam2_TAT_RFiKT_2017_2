@@ -7,7 +7,7 @@ namespace Notebook
   /// </summary>
   public class NoteBookProvider
   {
-    Command command;
+    public Command command;
     public void SetCommand(Command command)
     {
       this.command = command;

@@ -4,7 +4,7 @@ namespace Notebook.CommandImplementation
   /// <summary>
   /// Interface to implement the command pattern.
   /// </summary>
-  interface Command
+  public interface Command
   {
     void Execute();
   }

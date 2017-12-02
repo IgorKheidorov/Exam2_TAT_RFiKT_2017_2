@@ -22,5 +22,9 @@ namespace Notebook.CommandImplementation
     {
       resultOfSearch = noteBook.SearchByValue(value);
     }
+    public Note GetResult()
+    {
+      return resultOfSearch;
+    }
   }
 }
