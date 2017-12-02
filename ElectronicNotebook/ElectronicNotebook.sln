@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElectronicNotebook", "ElectronicNotebook\ElectronicNotebook.csproj", "{6ACF589D-97E9-4DE9-BB89-0BB6836E9934}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotebookTest", "NotebookTest\NotebookTest.csproj", "{45630826-EDD8-442B-81A0-B9CF55B608E7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6ACF589D-97E9-4DE9-BB89-0BB6836E9934}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6ACF589D-97E9-4DE9-BB89-0BB6836E9934}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6ACF589D-97E9-4DE9-BB89-0BB6836E9934}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6ACF589D-97E9-4DE9-BB89-0BB6836E9934}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45630826-EDD8-442B-81A0-B9CF55B608E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45630826-EDD8-442B-81A0-B9CF55B608E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45630826-EDD8-442B-81A0-B9CF55B608E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45630826-EDD8-442B-81A0-B9CF55B608E7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
