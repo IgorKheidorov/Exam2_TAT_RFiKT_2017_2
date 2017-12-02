@@ -17,7 +17,7 @@ namespace Notepad.Commands
     /// </summary>
     /// <param name="provider"></param>
     /// <param name="args"></param>
-    public AddNoteCommand(NoteBookProvider provider, string args)
+    public AddNoteCommand(NoteBookProvider provider, string args) : base(provider)
     {
       if (!args.StartsWith(name))
       {
@@ -25,7 +25,6 @@ namespace Notepad.Commands
       }
       Name = name;
       Args = regex.Match(args).Value;
-      NoteBookProvider = provider;
     }
 
     /// <summary>

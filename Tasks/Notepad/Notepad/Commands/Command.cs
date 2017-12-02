@@ -12,6 +12,11 @@ namespace Notepad.Commands
     public string Name { get; protected set; }
     public string Args { get; protected set; }
 
+    public Command(NoteBookProvider provider)
+    {
+      NoteBookProvider = provider;
+    }
+
     public abstract void Execute();
   }
 }

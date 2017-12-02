@@ -15,9 +15,9 @@ namespace Notepad.Commands
     /// Set args of command from paramether args
     /// Throws if want be create this command with invalid args
     /// </summary>
-    /// <param name="provider"></param>
-    /// <param name="args"></param>
-    public CreateCommand(NoteBookProvider provider, string args)
+    /// <param name="provider">current provider</param>
+    /// <param name="args">commands args</param>
+    public CreateCommand(NoteBookProvider provider, string args) : base(provider)
     {
       if (!args.StartsWith(name))
       {
@@ -25,7 +25,6 @@ namespace Notepad.Commands
       }
       Name = name;
       Args = regex.Match(args).Value;
-      NoteBookProvider = provider;
     }
 
     /// <summary>

@@ -45,7 +45,7 @@ namespace Notepad
         return false;
 
       NoteBook note = (NoteBook)obj;
-      return (Date == note.Date) && (Notes != note.Notes);
+      return (Name == note.Name) && (Date == note.Date) && (Notes != note.Notes);
     }
 
     /// <summary>

@@ -4,12 +4,12 @@ using Notepad.CommandExceptions;
 namespace Notepad.Commands
 {
   /// <summary>
-  /// Command Read NoteBook
+  /// Command View notes in NoteBook
   /// </summary>
-  public class ReadCommand : Command
+  public class ViewNotesCommand : Command
   {
-    private static string name = "read";
-    private readonly Regex regex = new Regex(@"read (\w+\.\w{1,3})");
+    private static string name = "view";
+    private readonly Regex regex = new Regex(@"view (\d+)");
 
     /// <summary>
     /// Set args of command from paramether args
@@ -17,7 +17,7 @@ namespace Notepad.Commands
     /// </summary>
     /// <param name="provider">current provider</param>
     /// <param name="args">commands args</param>
-    public ReadCommand(NoteBookProvider provider, string args) : base(provider)
+    public ViewNotesCommand(NoteBookProvider provider, string args) : base(provider)
     {
       if (!args.StartsWith(name))
       {
@@ -28,7 +28,8 @@ namespace Notepad.Commands
     }
 
     /// <summary>
-    /// Read notebook from file in field args
+    /// View notes in current notebook.
+    /// Count of viewed notes is in args
     /// </summary>
     public override void Execute()
     {
@@ -36,3 +37,4 @@ namespace Notepad.Commands
     }
   }
 }
+
