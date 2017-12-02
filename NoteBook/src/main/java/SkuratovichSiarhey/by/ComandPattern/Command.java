@@ -1,4 +1,4 @@
-package ComandPattern;
+package SkuratovichSiarhey.by.ComandPattern;
 
 /**
  * Created by siarhey on 02.12.17.

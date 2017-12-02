@@ -1,3 +1,5 @@
+package SkuratovichSiarhey.by;
+
 import java.util.Date;
 
 public class Note {
@@ -5,7 +7,9 @@ public class Note {
   private String content;
   private String date;
 
-  public Note() {
+  public Note(String head, String content) {
+    this.head = head;
+    this.content = content;
     Date date = new Date();
     this.date = date.toString();
   }
@@ -24,5 +28,9 @@ public class Note {
 
   public String getHead() {
     return head;
+  }
+
+  public String getDate() {
+    return date;
   }
 }
