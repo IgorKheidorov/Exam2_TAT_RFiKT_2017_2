@@ -97,6 +97,7 @@ namespace ElectronicNotebook
         }
         /// <summary>
         /// Downloads notebook from the file.
+        /// Method in development.
         /// </summary>
         /// <param name="path">Path of the file</param>
         public void DownloadNotebookFromFile(string path)
