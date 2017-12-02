@@ -49,6 +49,7 @@ namespace ReceiverTest
       expected.Add(note);
    
       ConcreteCommand findNotes = new ConcreteCommand(notebook, dateTimeUser, listOfNotes);
+      findNotes.Execute();
       CollectionAssert.AreEqual(expected, listOfNotes);
     }
   }
